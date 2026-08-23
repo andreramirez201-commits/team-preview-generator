@@ -133,18 +133,6 @@
     padding-bottom: 14px;
     border-bottom: 1px solid var(--gray-200);
   }
-  .step-questions {
-    font-size: 0.78rem;
-    font-style: italic;
-    color: var(--ink-soft);
-    line-height: 1.5;
-    margin: -10px 0 12px;
-    padding: 8px 10px;
-    background: #fff;
-    border: 1px solid var(--gray-200);
-    border-left: 3px solid var(--navy-2);
-    border-radius: 6px;
-  }
   .step-owner {
     font-size: 0.78rem;
     font-weight: 600;
@@ -168,7 +156,6 @@
   }
 
   .upload-box { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
-  .upload-label { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); }
   .upload-summary {
     font-size: 0.82rem;
     line-height: 1.5;
@@ -387,22 +374,13 @@
 
       <p class="step-progress-label" id="stepProgressLabel"></p>
       <p class="step-help" id="stepHelpText"></p>
-      <p class="step-questions" id="stepQuestionsText" hidden></p>
       <p class="step-owner" id="stepOwnerText" hidden></p>
 
       <form id="projectForm" novalidate>
 
         <div class="wizard-step" data-step="0">
           <div class="upload-box">
-            <label class="upload-label" for="docUpload">Upload your project brief <span class="hint">(.docx, .txt, or .md works best)</span></label>
-            <input type="file" id="docUpload" accept=".txt,.md,.markdown,.docx,text/plain,text/markdown,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-            <button type="button" id="btnTogglePaste" class="btn-secondary btn-small">Or paste the text instead</button>
-            <div id="pasteArea" hidden style="width:100%;">
-              <label for="docPasteText">Paste your document text</label>
-              <textarea id="docPasteText" rows="8" placeholder="Paste the text of your project brief here..."></textarea>
-              <button type="button" id="btnUsePasted" class="btn-secondary btn-small" style="margin-top:8px;">Use This Text</button>
-            </div>
-            <label for="presetProjectSelect" style="margin-top:12px;">Or choose your assigned project <span class="hint">(if your team was given one of these company briefs)</span></label>
+            <label for="presetProjectSelect">Choose your assigned project</label>
             <select id="presetProjectSelect">
               <option value="">— Select a project —</option>
             </select>
@@ -849,12 +827,6 @@
      tells the user it's unavailable; everything else keeps working. -->
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
-<!-- .docx upload support (Step 1's project brief). Also CDN-loaded, so —
-     like Save & Get Link above — this needs an internet connection; a
-     .txt/.md upload or paste still works fully offline if it fails to
-     load. -->
-<script src="https://unpkg.com/jszip@3.10.1/dist/jszip.min.js"></script>
-
 <script>
 (function () {
   "use strict";
@@ -916,7 +888,7 @@
   }
 
   var STEPS = [
-    { title: "Upload Your Document", roleSlug: "", help: "Upload the project brief you were given (a .txt or .md file works best). We'll automatically pull in your client name, business problem, and objective — nothing is invented, only what's actually in the document." },
+    { title: "Choose Your Project", roleSlug: "", help: "Choose your assigned project from the list. We'll automatically pull in the client name, business problem, and objective from that project's brief — nothing is invented, only what's actually in it." },
     { title: "Team & Project Basics", roleSlug: "", help: "Whole team — team number, everyone's name/role, your consulting team name, the client, the objective, and your logo." },
     { title: "Business & Workflow", roleSlug: "businessWorkflow", help: "The business problem, key challenges, baseline numbers, current vs. proposed workflow, and the before/after comparison." },
     { title: "Proposed Solution", roleSlug: "aiSolution", help: "The recommended solution, and the 5 tested components that prove it works." },
@@ -926,32 +898,6 @@
     { title: "Review & Export", roleSlug: "", help: "You're done. Check the live preview on the right, then use Save & Get Link or Export HTML above whenever you're ready." }
   ];
 
-  // Instructor questions from the brief, grouped by which field answers each
-  // one (see QUESTION_FIELD_MAP / mapQuestionsToFields). Session-only.
-  var currentQuestionsByField = {};
-
-  // Which fields live on each wizard step. Index-aligned with STEPS.
-  var STEP_FIELDS = [
-    [],
-    ["teamNumber", "teamName", "clientName", "objective"].concat(TEAM_MEMBER_FIELD_IDS),
-    ["problemSummary", "keyChallenges", "baselineMetrics", "currentWorkflow", "workflow", "beforeAfter"],
-    ["solutionName", "solutionDescription"].concat(PROMPT_FIELD_IDS),
-    ["sampleProposal", "followUpMessage1", "followUpMessage2", "followUpMessage3", "proposalQualityReview", "risksSafeguards", "humanReview"],
-    ["testingCriteria", "testingNotes", "successMeasures"],
-    ["implementPilot", "implementTraining", "implementHandoff", "implementAdoptionRisks", "implementFeedback", "implementImprove", "implementScale", "nextSteps"],
-    []
-  ];
-
-  function instructorQuestionsForStep(stepIndex) {
-    var fields = STEP_FIELDS[stepIndex] || [];
-    var qs = [];
-    fields.forEach(function (fid) {
-      (currentQuestionsByField[fid] || []).forEach(function (q) {
-        if (qs.indexOf(q) === -1) qs.push(q);
-      });
-    });
-    return qs;
-  }
 
   // ---------- utilities ----------
 
@@ -1288,309 +1234,10 @@
     return members;
   }
 
-  // ---------- document upload parsing ----------
-  // Extracts only what is actually stated in the uploaded/pasted brief.
-  // Anything not found is left blank for the team to fill in.
-
-  function stripMarkdownArtifacts(s) {
-    return s
-      .replace(/\*\*/g, "")
-      .replace(/\\([.\-])/g, "$1")
-      .replace(/\s+/g, " ")
-      .trim();
-  }
-
-  function extractSectionBody(text, headingRegex) {
-    var m = headingRegex.exec(text);
-    if (!m) return "";
-    var start = m.index + m[0].length;
-    var rest = text.slice(start);
-    var stop = /\n\s*#{1,6}\s/.exec(rest);
-    var body = stop ? rest.slice(0, stop.index) : rest;
-    return body.trim();
-  }
-
-  // Splits on sentence-ending punctuation followed by whitespace or end of
-  // string. Deliberately avoids lookbehind regex for older-browser safety.
-  function splitIntoSentences(text) {
-    var out = [];
-    var buf = "";
-    for (var i = 0; i < text.length; i++) {
-      buf += text[i];
-      if (/[.!?]/.test(text[i])) {
-        var next = text[i + 1];
-        if (!next || /\s/.test(next)) {
-          out.push(buf.trim());
-          buf = "";
-        }
-      }
-    }
-    if (buf.trim()) out.push(buf.trim());
-    return out;
-  }
-
-  var NUMBER_WORDS = "one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve";
-  var METRIC_PHRASE_SOURCE = "((?:more than|approximately|about|over|at least|nearly)\\s+)?(\\d+\\+?|" + NUMBER_WORDS + ")\\s*(hours?|days?|minutes?|weeks?)";
-
-  // Sentences in the problem statement that contain a real number-plus-unit
-  // (e.g. "Proposal drafting averages 14 hours") — these are the specific,
-  // measurable pain points a team's solution has to actually address, not
-  // just the general problem paragraph.
-  function extractBaselineSentences(text) {
-    if (!text) return [];
-    var re = new RegExp(METRIC_PHRASE_SOURCE, "i");
-    return splitIntoSentences(text).filter(function (s) { return re.test(s); });
-  }
-
-  // Pulls every number+unit fragment out of a sentence, for seeding Before:
-  // lines — a single sentence often names more than one pain point (e.g.
-  // "...averages 14 hours... leads wait more than five days..."), and an
-  // earlier version of this only grabbed the first, silently dropping the
-  // rest of the problem's own numbers.
-  function extractMetricPhrases(sentence) {
-    var re = new RegExp(METRIC_PHRASE_SOURCE, "gi");
-    var phrases = [];
-    var m;
-    while ((m = re.exec(sentence)) !== null) {
-      phrases.push(m[0].trim());
-    }
-    return phrases;
-  }
-
-  // ---------- reading .docx uploads ----------
-  //
-  // Every downstream parser (parseBriefText) works off plain
-  // text shaped like markdown — "#" headings, "- " bullets, "| a | b |"
-  // tables. A .docx carries that same structure as real XML (paragraph
-  // styles, numbered/bulleted paragraphs, real tables), so docxBodyToText
-  // re-renders it back into that same markdown-ish shape instead of writing
-  // a second, parallel set of extraction rules.
-
-  function fileExtension(filename) {
-    var m = /\.([a-z0-9]+)$/i.exec(filename || "");
-    return m ? m[1].toLowerCase() : "";
-  }
-
-  function docxBodyToText(xmlString) {
-    var xml = new DOMParser().parseFromString(xmlString, "application/xml");
-    if (xml.getElementsByTagName("parsererror").length) return "";
-    var body = xml.getElementsByTagName("w:body")[0] || xml.documentElement;
-
-    function textOf(el) {
-      var runs = el.getElementsByTagName("w:t");
-      var out = "";
-      for (var i = 0; i < runs.length; i++) out += runs[i].textContent;
-      return out;
-    }
-    function headingLevel(p) {
-      var styles = p.getElementsByTagName("w:pStyle");
-      if (!styles.length) return 0;
-      var val = styles[0].getAttribute("w:val") || "";
-      if (/^title$/i.test(val)) return 1;
-      var m = /Heading(\d)/i.exec(val);
-      return m ? Math.min(6, parseInt(m[1], 10)) : 0;
-    }
-    function isListItem(p) {
-      return p.getElementsByTagName("w:numPr").length > 0;
-    }
-    function tableRows(tbl) {
-      var rows = [];
-      var trs = tbl.getElementsByTagName("w:tr");
-      for (var i = 0; i < trs.length; i++) {
-        var tcs = trs[i].getElementsByTagName("w:tc");
-        var cells = [];
-        for (var j = 0; j < tcs.length; j++) cells.push(textOf(tcs[j]).trim());
-        rows.push(cells);
-      }
-      return rows;
-    }
-
-    var lines = [];
-    var children = body.childNodes;
-    for (var i = 0; i < children.length; i++) {
-      var node = children[i];
-      if (node.nodeType !== 1) continue;
-      if (node.tagName === "w:p") {
-        var text = textOf(node).trim();
-        if (!text) { lines.push(""); continue; }
-        var level = headingLevel(node);
-        if (level) lines.push(new Array(level + 1).join("#") + " " + text);
-        else if (isListItem(node)) lines.push("- " + text);
-        else lines.push(text);
-      } else if (node.tagName === "w:tbl") {
-        tableRows(node).forEach(function (cells, idx) {
-          lines.push("| " + cells.join(" | ") + " |");
-          if (idx === 0) lines.push("| " + cells.map(function () { return "---"; }).join(" | ") + " |");
-        });
-      }
-    }
-    return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim();
-  }
-
-  function extractTextFromDocx(file) {
-    return new Promise(function (resolve, reject) {
-      if (typeof JSZip === "undefined") { reject({ code: "lib_unavailable" }); return; }
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        JSZip.loadAsync(e.target.result)
-          .then(function (zip) {
-            var entry = zip.file("word/document.xml");
-            if (!entry) throw { code: "not_docx" };
-            return entry.async("string");
-          })
-          .then(function (xml) { resolve(docxBodyToText(xml)); })
-          .catch(reject);
-      };
-      reader.onerror = function () { reject({ code: "read_failed" }); };
-      reader.readAsArrayBuffer(file);
-    });
-  }
-
-  // Resolves to the file's text regardless of format — .docx goes through
-  // the extractor above, everything else (.txt, .md) reads as plain text
-  // like before.
-  function extractFileText(file) {
-    var ext = fileExtension(file.name);
-    if (ext === "docx") return extractTextFromDocx(file);
-    return new Promise(function (resolve, reject) {
-      var reader = new FileReader();
-      reader.onload = function (e) { resolve(String(e.target.result)); };
-      reader.onerror = function () { reject({ code: "read_failed" }); };
-      reader.readAsText(file);
-    });
-  }
-
-  function describeFileReadError(err, ext) {
-    if (err && err.code === "lib_unavailable") {
-      return "Reading a ." + ext + " file needs an internet connection (to load a small library) — try again once you're online, or paste the text instead.";
-    }
-    if (err && err.code === "not_docx") {
-      return "That doesn't look like a .docx file — an older .doc file isn't supported. Save it as .docx (or .txt/.md) and try again, or paste the text instead.";
-    }
-    return "Could not read that file. Try pasting the text instead.";
-  }
-
-  function parseBriefText(text, filename) {
-    var result = {};
-
-    var teamNumMatch = /Team\s*#?\s*(\d+)/i.exec(filename || "") || /\bTeam\s+(\d+)\b/i.exec(text);
-    if (teamNumMatch) result.teamNumber = "Team " + teamNumMatch[1];
-
-    var projectBody = extractSectionBody(text, /#{1,6}[^\n]*Your Project[^\n]*\n/i);
-    if (projectBody) {
-      var paras = projectBody.split(/\n\s*\n/).map(stripMarkdownArtifacts).filter(Boolean);
-      if (paras.length) {
-        var first = paras[0];
-        if (first.length > 0 && first.length <= 70 && !/[.!?]$/.test(first)) {
-          result.clientName = first;
-          result.problemSummary = paras.slice(1).join(" ");
-        } else {
-          result.problemSummary = paras.join(" ");
-        }
-      }
-    }
-
-    // The specific measurable pain points inside the problem statement (e.g.
-    // "14 hours", "more than five days") — these become the Baseline Metrics
-    // and seed the Before side of the Before/After field, so the exact
-    // numbers a team's solution has to move are impossible to miss.
-    if (result.problemSummary) {
-      var baselineSentences = extractBaselineSentences(result.problemSummary);
-      if (baselineSentences.length) {
-        result.baselineMetrics = baselineSentences.join("\n");
-        var allPhrases = [];
-        baselineSentences.forEach(function (s) {
-          extractMetricPhrases(s).forEach(function (phrase) {
-            if (allPhrases.indexOf(phrase) === -1) allPhrases.push(phrase);
-          });
-        });
-        // Seed only the real, known Before values. The After: line is left
-        // to end right at the colon — an obvious blank to type into on
-        // screen, and if left untouched it renders as nothing in the
-        // preview/export rather than leaving placeholder text sitting in a
-        // "finished" deck.
-        var beforeLines = allPhrases.map(function (phrase) {
-          return "Before: " + phrase + "\nAfter: ";
-        });
-        if (beforeLines.length) result.beforeAfter = beforeLines.join("\n");
-      }
-    }
-
-    var challengeBody = extractSectionBody(text, /#{1,6}[^\n]*Your Challenge[^\n]*\n/i);
-    if (challengeBody) {
-      result.objective = stripMarkdownArtifacts(challengeBody);
-    }
-
-    var addressMatch = /must address:?\s*([^\n.]+)/i.exec(text);
-    if (addressMatch) {
-      var items = addressMatch[1]
-        .split(/,|\band\b/i)
-        .map(stripMarkdownArtifacts)
-        .filter(Boolean)
-        .map(function (s) { return s.charAt(0).toUpperCase() + s.slice(1); });
-      if (items.length) result.risksSafeguards = items.join("\n");
-    }
-
-    // Deliverable titles (e.g. "1. AI Prototype", "2. Implementation & Results
-    // Plan") from a "What Your Team Must Submit"-style section, used later to
-    // tie a specific step to the exact deliverable your brief actually asks for.
-    var submitBody = extractSectionBody(text, /#{1,6}[^\n]*What Your Team Must Submit[^\n]*\n/i);
-    if (submitBody) {
-      var deliverables = [];
-      var re = /\*\*\d+\\?\.\s*([^*]+?)\*\*/g;
-      var dm;
-      while ((dm = re.exec(submitBody)) !== null) {
-        var title = stripMarkdownArtifacts(dm[1]).replace(/\([^)]*\)/g, "").trim();
-        if (title) deliverables.push(title);
-      }
-      if (deliverables.length) result.deliverables = deliverables;
-    }
-
-    // The specific questions your brief actually requires an answer to
-    // (e.g. under "Answer these questions..."), pulled verbatim as bullet
-    // lines ending in "?". These are what the wizard's fields need to answer
-    // — surfaced later next to the field that answers each one.
-    var questions = [];
-    text.split(/\r?\n/).forEach(function (line) {
-      var cleaned = stripMarkdownArtifacts(line.replace(/^[\s*\-]+/, ""));
-      if (/\?\s*$/.test(cleaned) && cleaned.length > 8) questions.push(cleaned);
-    });
-    if (questions.length) result.instructorQuestions = questions;
-
-    return result;
-  }
-
-  // Which single wizard field each kind of instructor question answers.
-  // First matching pattern wins.
-  var QUESTION_FIELD_MAP = [
-    { pattern: /biggest.*problem|business.*problem|problems?\?/i, fieldId: "problemSummary" },
-    { pattern: /ai tool|recommend/i, fieldId: "solutionDescription" },
-    { pattern: /personali/i, fieldId: "solutionDescription" },
-    { pattern: /success measure|measures? should|track/i, fieldId: "successMeasures" },
-    { pattern: /risk/i, fieldId: "risksSafeguards" },
-    { pattern: /do next|next steps?/i, fieldId: "nextSteps" }
-  ];
-
-  function mapQuestionsToFields(questions) {
-    var map = {};
-    (questions || []).forEach(function (q) {
-      var m = QUESTION_FIELD_MAP.filter(function (e) { return e.pattern.test(q); })[0];
-      if (!m) return;
-      if (!map[m.fieldId]) map[m.fieldId] = [];
-      map[m.fieldId].push(q);
-    });
-    return map;
-  }
-
-  // Fixed company briefs some cohorts assign one-per-team instead of having
-  // each team source and upload their own document. Hand-mapped (not run
-  // through parseBriefText) because these briefs use different section
-  // headings ("Business Challenge", "Project Objectives") than the generic
-  // upload parser looks for ("Your Challenge", "Your Project") — mapping
-  // each field directly is more reliable than teaching the parser a second
-  // heading vocabulary. Selecting one behaves exactly like a successful
-  // upload: it fills the same fields via finishUpload() and keeps the full
-  // brief text available under "View Original Brief".
+  // The fixed company briefs this cohort assigns one-per-team. Each field is
+  // hand-mapped from the actual brief text. Selecting one fills the same
+  // fields finishUpload() would from a real upload, and keeps the full brief
+  // text available under "View Original Brief".
   var PRESET_PROJECTS = {
     greenleaf: {
       name: "GreenLeaf Home Services — Customer Support Enhancement",
@@ -1685,18 +1332,12 @@
     var found = EXTRACTABLE_FIELDS.filter(function (f) { return extracted[f.id]; }).map(function (f) { return f.label; });
     var missing = EXTRACTABLE_FIELDS.filter(function (f) { return !extracted[f.id]; }).map(function (f) { return f.label; });
     var msg = "";
-    if (found.length) msg += "Found in your document: " + found.join(", ") + ". ";
+    if (found.length) msg += "Found for this project: " + found.join(", ") + ". ";
     if (missing.length) msg += "Couldn't find: " + missing.join(", ") + " — fill those in yourself. ";
-    if (extracted.deliverables && extracted.deliverables.length) {
-      msg += "Required deliverables found: " + extracted.deliverables.join(", ") + ". ";
-    }
-    if (extracted.instructorQuestions && extracted.instructorQuestions.length) {
-      msg += "Found " + extracted.instructorQuestions.length + " specific question" + (extracted.instructorQuestions.length > 1 ? "s" : "") + " your brief requires an answer to — they'll show up next to the field that answers each one. ";
-    }
     if (extracted.baselineMetrics) {
       msg += "Found the specific numbers your solution has to improve (" + extracted.baselineMetrics.split("\n").join("; ") + ") — pre-filled into Baseline Metrics, and started in Before/After so you just need to add your team's result. ";
     }
-    msg += "Review everything on the next steps before moving on — nothing here is guessed, only what was actually in your document.";
+    msg += "Review everything on the next steps before moving on — nothing here is guessed, only what was actually in the brief.";
     return msg;
   }
 
@@ -2418,7 +2059,6 @@
     applyFormData({});
     clearDraft();
     currentLogoDataUrl = "";
-    currentQuestionsByField = {};
     document.getElementById("logoUpload").value = "";
     updateLogoPreview();
     setBriefRawText("");
@@ -2428,7 +2068,6 @@
       updatePersonSlidesPreview(who);
     });
     document.getElementById("uploadSummary").hidden = true;
-    document.getElementById("docPasteText").value = "";
     document.getElementById("presetProjectSelect").value = "";
     renderPreview();
     showStep(0);
@@ -2522,34 +2161,15 @@
     offerFileDownload(filename, doc, "text/html");
   }
 
-  // ---------- upload step ----------
+  // ---------- project selection ----------
 
   function finishUpload(extracted, rawText) {
     applyExtractedFields(extracted);
-    currentQuestionsByField = mapQuestionsToFields(extracted.instructorQuestions);
     setBriefRawText(rawText);
     syncState();
     var summaryEl = document.getElementById("uploadSummary");
     summaryEl.textContent = describeExtraction(extracted);
     summaryEl.hidden = false;
-  }
-
-  function handleFileUpload(file) {
-    if (!file) return;
-    extractFileText(file).then(function (text) {
-      finishUpload(parseBriefText(text, file.name), text);
-    }).catch(function (err) {
-      window.alert(describeFileReadError(err, fileExtension(file.name)));
-    });
-  }
-
-  function handlePastedText() {
-    var text = document.getElementById("docPasteText").value;
-    if (!text.trim()) {
-      window.alert("Paste some text first.");
-      return;
-    }
-    finishUpload(parseBriefText(text, ""), text);
   }
 
   // ---------- wizard navigation ----------
@@ -2565,15 +2185,6 @@
     document.getElementById("stepHelpText").textContent = STEPS[currentStep].help;
     document.getElementById("btnStepBack").style.visibility = currentStep === 0 ? "hidden" : "visible";
     document.getElementById("btnStepNext").style.visibility = currentStep === STEPS.length - 1 ? "hidden" : "visible";
-
-    var questionsEl = document.getElementById("stepQuestionsText");
-    var stepQuestions = instructorQuestionsForStep(currentStep);
-    if (stepQuestions.length) {
-      questionsEl.textContent = "Your brief asks: " + stepQuestions.map(function (q) { return '"' + q + '"'; }).join("  ·  ");
-      questionsEl.hidden = false;
-    } else {
-      questionsEl.hidden = true;
-    }
 
     var ownerEl = document.getElementById("stepOwnerText");
     var roleSlug = STEPS[currentStep].roleSlug;
@@ -2705,14 +2316,6 @@
     });
     document.getElementById("projectForm").addEventListener("input", syncState);
 
-    document.getElementById("docUpload").addEventListener("change", function () {
-      handleFileUpload(this.files[0]);
-    });
-    document.getElementById("btnTogglePaste").addEventListener("click", function () {
-      var area = document.getElementById("pasteArea");
-      area.hidden = !area.hidden;
-    });
-    document.getElementById("btnUsePasted").addEventListener("click", handlePastedText);
     document.getElementById("btnSkipUpload").addEventListener("click", nextStep);
 
     var presetSelect = document.getElementById("presetProjectSelect");
