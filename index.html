@@ -408,37 +408,37 @@
             </div>
             <div class="team-member-block">
               <div class="team-row">
-                <div><label for="teamMember2Name">Name</label><input type="text" id="teamMember2Name" value="" placeholder="This person's name"><p class="team-row-hint">Owns Step 4 — Proposed Solution</p></div>
-                <div><label for="teamMember2Role">Role</label><input type="text" id="teamMember2Role" value="Solution Lead"></div>
-                <div><label for="teamMember2Responsibility">Responsibility</label><input type="text" id="teamMember2Responsibility" value="Solution design, prototype development, solution iteration"></div>
+                <div><label for="teamMember2Name">Name</label><input type="text" id="teamMember2Name" value="" placeholder="This person's name"><p class="team-row-hint" id="teamMember2Hint">Owns Step 4 — Deliverable 2</p></div>
+                <div><label for="teamMember2Role">Role</label><input type="text" id="teamMember2Role" value="Prototype Lead"></div>
+                <div><label for="teamMember2Responsibility">Responsibility</label><input type="text" id="teamMember2Responsibility" value="Prototype development, demo build, testing"></div>
               </div>
             </div>
             <div class="team-member-block">
               <div class="team-row">
-                <div><label for="teamMember3Name">Name</label><input type="text" id="teamMember3Name" value="" placeholder="This person's name"><p class="team-row-hint">Owns Step 3 — Business &amp; Workflow</p></div>
-                <div><label for="teamMember3Role">Role</label><input type="text" id="teamMember3Role" value="Business & Workflow Analyst"></div>
-                <div><label for="teamMember3Responsibility">Responsibility</label><input type="text" id="teamMember3Responsibility" value="Business problem analysis, current-state workflow, future-state workflow, business value analysis"></div>
+                <div><label for="teamMember3Name">Name</label><input type="text" id="teamMember3Name" value="" placeholder="This person's name"><p class="team-row-hint" id="teamMember3Hint">Owns Step 3 — Deliverable 1</p></div>
+                <div><label for="teamMember3Role">Role</label><input type="text" id="teamMember3Role" value="Implementation Plan Lead"></div>
+                <div><label for="teamMember3Responsibility">Responsibility</label><input type="text" id="teamMember3Responsibility" value="Pain points analysis, AI tool recommendation, integration approach, timeline & budget"></div>
               </div>
             </div>
             <div class="team-member-block">
               <div class="team-row">
-                <div><label for="teamMember4Name">Name</label><input type="text" id="teamMember4Name" value="" placeholder="This person's name"><p class="team-row-hint">Owns Step 5 — Recommendation</p></div>
-                <div><label for="teamMember4Role">Role</label><input type="text" id="teamMember4Role" value="Recommendation, Risk & Presentation Lead"></div>
-                <div><label for="teamMember4Responsibility">Responsibility</label><input type="text" id="teamMember4Responsibility" value="Recommendation drafting, follow-up communications, risk review, presentation development"></div>
+                <div><label for="teamMember4Name">Name</label><input type="text" id="teamMember4Name" value="" placeholder="This person's name"><p class="team-row-hint" id="teamMember4Hint">Owns Step 5 — Deliverable 3</p></div>
+                <div><label for="teamMember4Role">Role</label><input type="text" id="teamMember4Role" value="Quick Start Guide Lead"></div>
+                <div><label for="teamMember4Responsibility">Responsibility</label><input type="text" id="teamMember4Responsibility" value="Staff guide, quick reference card, FAQs"></div>
               </div>
             </div>
             <div class="team-member-block">
               <div class="team-row">
-                <div><label for="teamMember5Name">Name</label><input type="text" id="teamMember5Name" value="" placeholder="This person's name"><p class="team-row-hint">Owns Step 6 — Testing</p></div>
-                <div><label for="teamMember5Role">Role</label><input type="text" id="teamMember5Role" value="Testing, Measurement & Quality Lead"></div>
-                <div><label for="teamMember5Responsibility">Responsibility</label><input type="text" id="teamMember5Responsibility" value="Prototype testing, output evaluation, testing documentation, success measures, quality assessment"></div>
+                <div><label for="teamMember5Name">Name</label><input type="text" id="teamMember5Name" value="" placeholder="This person's name"><p class="team-row-hint" id="teamMember5Hint">Owns Step 6 — Deliverable 4</p></div>
+                <div><label for="teamMember5Role">Role</label><input type="text" id="teamMember5Role" value="Success Metrics Lead"></div>
+                <div><label for="teamMember5Responsibility">Responsibility</label><input type="text" id="teamMember5Responsibility" value="KPIs, before/after comparison, monitoring checklist"></div>
               </div>
             </div>
             <div class="team-member-block">
               <div class="team-row">
-                <div><label for="teamMember6Name">Name</label><input type="text" id="teamMember6Name" value="" placeholder="This person's name"><p class="team-row-hint">Owns Step 7 — Implementation</p></div>
-                <div><label for="teamMember6Role">Role</label><input type="text" id="teamMember6Role" value="Implementation & Adoption Lead"></div>
-                <div><label for="teamMember6Responsibility">Responsibility</label><input type="text" id="teamMember6Responsibility" value="Implementation strategy, pilot structure, training approach, adoption, human handoffs, 30/60/90-day rollout, recommended next steps"></div>
+                <div><label for="teamMember6Name">Name</label><input type="text" id="teamMember6Name" value="" placeholder="This person's name"><p class="team-row-hint" id="teamMember6Hint">Owns Step 7 — Deliverable 5</p></div>
+                <div><label for="teamMember6Role">Role</label><input type="text" id="teamMember6Role" value="Executive Presentation Lead"></div>
+                <div><label for="teamMember6Responsibility">Responsibility</label><input type="text" id="teamMember6Responsibility" value="ROI summary, roadmap, next steps, final presentation"></div>
               </div>
             </div>
           </fieldset>
@@ -466,62 +466,17 @@
 
         <div class="wizard-step" data-step="2" hidden>
           <fieldset>
-            <legend title="What's broken today, why it matters, and the numbers that prove it. This step's deliverable: business problem analysis, current-state workflow, future-state workflow, before/after comparison.">Business Problem</legend>
-
-            <label for="problemSummary">Problem Summary <span class="hint">(auto-filled from your document if found)</span></label>
-            <textarea id="problemSummary" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="problemSummary">Need help with this?</button>
-            <div class="help-panel" id="help-problemSummary" hidden>
-              <p><strong>Ask yourselves:</strong> What's actually wrong today? Describe the situation in plain language, no jargon.</p>
-              <p><strong>Example:</strong> "Proposal drafting takes about 14 hours, win rates have dropped, and leads wait 5+ days for follow-up."</p>
-              <p>If this was auto-filled from your uploaded document, read it over — it's often the most important sentence in your whole preview, since it becomes your slide's headline.</p>
+            <legend id="d1Legend" title="This step's deliverable, one field per required item.">Deliverable 1</legend>
+            <button type="button" class="btn-help" data-help-for="d1f1">Need help with this?</button>
+            <div class="help-panel" id="help-d1f1" hidden>
+              <p><strong>Ask yourselves:</strong> What does this deliverable actually need to show? Write real specifics for each item below — not a description of what you plan to do.</p>
+              <p>If your project brief already answered some of this, it's pre-filled — review it and add your team's own detail.</p>
             </div>
 
-            <label for="keyChallenges">Key Challenges <span class="hint">(one per line — your own analysis, including any bottlenecks you identify)</span></label>
-            <textarea id="keyChallenges" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="keyChallenges">Need help with this?</button>
-            <div class="help-panel" id="help-keyChallenges" hidden>
-              <p><strong>Ask yourselves:</strong> What slows the process down day to day? What causes errors, rework, or complaints? What's the biggest bottleneck?</p>
-              <p><strong>Example:</strong> "Reps rebuild proposals from scratch for every client." / "Follow-up falls through the cracks after the first message." / "Manual handoffs delay approvals by days."</p>
-              <p>Aim for 2-4 challenges. Be specific — "things are slow" is less useful than "proposals take 14 hours to draft."</p>
-            </div>
-
-            <label for="baselineMetrics">Baseline Metrics <span class="hint">(one per line)</span></label>
-            <textarea id="baselineMetrics" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="baselineMetrics">Need help with this?</button>
-            <div class="help-panel" id="help-baselineMetrics" hidden>
-              <p><strong>Ask yourselves:</strong> What number shows how big this problem is today? How long does it take? How often does it fail? What does it cost?</p>
-              <p><strong>Example:</strong> "Proposal drafting: ~14 hours." / "Follow-up delay: 5+ days for some leads."</p>
-              <p>Use real numbers from the brief if you have them. If not, make a reasonable estimate and say so.</p>
-            </div>
-
-            <label for="currentWorkflow">Current Workflow <span class="hint">(the process today, before AI)</span></label>
-            <textarea id="currentWorkflow" rows="2"></textarea>
-            <button type="button" class="btn-help" data-help-for="currentWorkflow">Need help with this?</button>
-            <div class="help-panel" id="help-currentWorkflow" hidden>
-              <p><strong>Ask yourselves:</strong> Before any AI, what are the actual steps today, in order? Where does it get stuck or slow down?</p>
-              <p><strong>Example:</strong> "Sales Conversation -&gt; Manual Notes -&gt; Manual Proposal Drafting -&gt; Review -&gt; Proposal Sent -&gt; Manual Follow-Up"</p>
-              <p>Separate each step with an arrow (-&gt;). Fill this in alongside Proposed Workflow below for a real before/after process comparison, not just a before/after number.</p>
-            </div>
-
-            <label for="workflow">Proposed Workflow <span class="hint">(Step 1 -&gt; Step 2 -&gt; Step 3)</span></label>
-            <textarea id="workflow" rows="2"></textarea>
-            <button type="button" class="btn-help" data-help-for="workflow">Need help with this?</button>
-            <div class="help-panel" id="help-workflow" hidden>
-              <p><strong>Ask yourselves:</strong> What are the steps, in order, from raw input to final output? Where does a human check the work?</p>
-              <p><strong>Example:</strong> "Sales Notes -&gt; Opportunity Brief -&gt; AI Draft -&gt; Quality Check -&gt; Human Approval -&gt; AI-Assisted Follow-Up"</p>
-              <p>Separate each step with an arrow (-&gt;) — it turns into connected boxes automatically.</p>
-            </div>
-
-            <label for="beforeAfter">Before / After Comparison <span class="hint">(one per line, prefix with "Before:" or "After:")</span></label>
-            <textarea id="beforeAfter" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="beforeAfter">Need help with this?</button>
-            <div class="help-panel" id="help-beforeAfter" hidden>
-              <p><strong>Ask yourselves:</strong> What changed, in numbers? Pick one or two metrics you can measure both before and after.</p>
-              <p><strong>Example:</strong> "Before: 14 hours to draft a proposal" / "After: 20 minutes with AI assistance"</p>
-              <p>If Step 1's document upload found numbers in your problem statement, the Before: lines above are already filled in for you — type your team's real, measured result right after each "After:" once you have it.</p>
-              <p>Keep the units consistent between Before and After (both in hours, or both in minutes) — mixed units can't be charted fairly, and the preview will fall back to a plain list.</p>
-            </div>
+            <div id="d1f1Row"><label id="d1f1Label" for="d1f1">Item 1</label><textarea id="d1f1" rows="3"></textarea></div>
+            <div id="d1f2Row"><label id="d1f2Label" for="d1f2">Item 2</label><textarea id="d1f2" rows="3"></textarea></div>
+            <div id="d1f3Row"><label id="d1f3Label" for="d1f3">Item 3</label><textarea id="d1f3" rows="3"></textarea></div>
+            <div id="d1f4Row"><label id="d1f4Label" for="d1f4">Item 4</label><textarea id="d1f4" rows="3"></textarea></div>
           </fieldset>
 
           <fieldset>
@@ -537,66 +492,18 @@
 
         <div class="wizard-step" data-step="3" hidden>
           <fieldset>
-            <legend title="What you're proposing, and the 5 components that prove it works. This step's deliverable.">Proposed Solution</legend>
-
-            <label for="solutionName">Solution Name</label>
-            <input type="text" id="solutionName">
-            <button type="button" class="btn-help" data-help-for="solutionName">Need help with this?</button>
-            <div class="help-panel" id="help-solutionName" hidden>
-              <p><strong>Ask yourselves:</strong> What do you want to call your solution? Give it a name a client could remember.</p>
-              <p><strong>Example:</strong> "Streamlined Client Communication Workflow"</p>
-              <p>Keep it short — it becomes a subheading in your preview.</p>
+            <legend id="d2Legend" title="This step's deliverable, one field per required item.">Deliverable 2</legend>
+            <button type="button" class="btn-help" data-help-for="d2f1">Need help with this?</button>
+            <div class="help-panel" id="help-d2f1" hidden>
+              <p><strong>Ask yourselves:</strong> What did you actually build and test? Describe the real thing and its real output, not a plan for what you'll build.</p>
+              <p>A demo or video item means a short description of it, or a link to it — not the artifact itself.</p>
             </div>
 
-            <label for="solutionDescription">Solution Description <span class="hint">(what it does, what you recommend and why, how people stay in control of it)</span></label>
-            <textarea id="solutionDescription" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="solutionDescription">Need help with this?</button>
-            <div class="help-panel" id="help-solutionDescription" hidden>
-              <p><strong>Ask yourselves:</strong> What does your solution actually do, what are you recommending and why, and how do people stay in control of it?</p>
-              <p><strong>Example:</strong> "A streamlined workflow that drafts proposals and follow-ups from sales notes, with a human reviewing everything before it's sent. We are not replacing the salesperson."</p>
-              <p>The first sentence becomes your slide's headline, so make it count.</p>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend title="Proof it works: 5 real, tested components.">Solution Details — 5 Components</legend>
-
-            <div class="prompt-block">
-              <label for="prompt1Purpose">Component 1 Purpose <span class="hint">(what it does, e.g. "Notes -&gt; Summary Brief")</span></label>
-              <input type="text" id="prompt1Purpose">
-              <label for="prompt1Text">Component 1 Details</label>
-              <textarea id="prompt1Text" rows="4"></textarea>
-            </div>
-            <div class="prompt-block">
-              <label for="prompt2Purpose">Component 2 Purpose</label>
-              <input type="text" id="prompt2Purpose">
-              <label for="prompt2Text">Component 2 Details</label>
-              <textarea id="prompt2Text" rows="4"></textarea>
-            </div>
-            <div class="prompt-block">
-              <label for="prompt3Purpose">Component 3 Purpose</label>
-              <input type="text" id="prompt3Purpose">
-              <label for="prompt3Text">Component 3 Details</label>
-              <textarea id="prompt3Text" rows="4"></textarea>
-            </div>
-            <div class="prompt-block">
-              <label for="prompt4Purpose">Component 4 Purpose</label>
-              <input type="text" id="prompt4Purpose">
-              <label for="prompt4Text">Component 4 Details</label>
-              <textarea id="prompt4Text" rows="4"></textarea>
-            </div>
-            <div class="prompt-block">
-              <label for="prompt5Purpose">Component 5 Purpose</label>
-              <input type="text" id="prompt5Purpose">
-              <label for="prompt5Text">Component 5 Details</label>
-              <textarea id="prompt5Text" rows="4"></textarea>
-            </div>
-            <button type="button" class="btn-help" data-help-for="prompt1Text">Need help with this?</button>
-            <div class="help-panel" id="help-prompt1Text" hidden>
-              <p><strong>Ask yourselves:</strong> What did you actually build and test? Describe real components and real output, not descriptions of what you plan to build.</p>
-              <p><strong>Example:</strong> Purpose: "Discovery Notes -&gt; Summary Brief". Details: "Summarizes sales notes into a structured brief with client name, pain points, and next steps."</p>
-              <p>Fill in as many as you have — a blank one just won't show up in your preview.</p>
-            </div>
+            <div id="d2f1Row"><label id="d2f1Label" for="d2f1">Item 1</label><textarea id="d2f1" rows="3"></textarea></div>
+            <div id="d2f2Row"><label id="d2f2Label" for="d2f2">Item 2</label><textarea id="d2f2" rows="3"></textarea></div>
+            <div id="d2f3Row"><label id="d2f3Label" for="d2f3">Item 3</label><textarea id="d2f3" rows="3"></textarea></div>
+            <div id="d2f4Row"><label id="d2f4Label" for="d2f4">Item 4</label><textarea id="d2f4" rows="3"></textarea></div>
+            <div id="d2f5Row"><label id="d2f5Label" for="d2f5">Item 5</label><textarea id="d2f5" rows="3"></textarea></div>
           </fieldset>
 
           <fieldset>
@@ -612,56 +519,15 @@
 
         <div class="wizard-step" data-step="4" hidden>
           <fieldset>
-            <legend title="Two required deliverables: an actual recommendation, and the 3-message follow-up sequence. This step's deliverable.">Recommendation &amp; Follow-Up</legend>
-
-            <label for="sampleProposal">Recommendation <span class="hint">(the actual proposal/recommendation text, not a description of it)</span></label>
-            <textarea id="sampleProposal" rows="4"></textarea>
-            <button type="button" class="btn-help" data-help-for="sampleProposal">Need help with this?</button>
-            <div class="help-panel" id="help-sampleProposal" hidden>
-              <p><strong>Ask yourselves:</strong> If you ran your solution on a real fictional scenario, what did it actually produce?</p>
-              <p>Paste that real output here — this is a required deliverable on its own, not just an example inside a component.</p>
+            <legend id="d3Legend" title="This step's deliverable, one field per required item.">Deliverable 3</legend>
+            <button type="button" class="btn-help" data-help-for="d3f1">Need help with this?</button>
+            <div class="help-panel" id="help-d3f1" hidden>
+              <p><strong>Ask yourselves:</strong> If someone on the client's team opened this cold, what would they actually need to see? Write it the way you'd want it written for you.</p>
             </div>
 
-            <label for="followUpMessage1">Follow-Up Message 1 <span class="hint">(Initial Follow-Up)</span></label>
-            <textarea id="followUpMessage1" rows="2"></textarea>
-            <label for="followUpMessage2">Follow-Up Message 2 <span class="hint">(Value Follow-Up)</span></label>
-            <textarea id="followUpMessage2" rows="2"></textarea>
-            <label for="followUpMessage3">Follow-Up Message 3 <span class="hint">(Final Check-In)</span></label>
-            <textarea id="followUpMessage3" rows="2"></textarea>
-            <button type="button" class="btn-help" data-help-for="followUpMessage1">Need help with this?</button>
-            <div class="help-panel" id="help-followUpMessage1" hidden>
-              <p><strong>Ask yourselves:</strong> If a lead goes quiet, what are the 3 real messages your workflow would send? A quick check-in, then a value reminder, then a low-pressure final message.</p>
-              <p>Fill in the actual message text your solution produced, not a description of what it should do.</p>
-            </div>
-
-            <label for="proposalQualityReview">Quality Review <span class="hint">(reviewing outputs for tone, accuracy, professionalism)</span></label>
-            <textarea id="proposalQualityReview" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="proposalQualityReview">Need help with this?</button>
-            <div class="help-panel" id="help-proposalQualityReview" hidden>
-              <p><strong>Ask yourselves:</strong> When you read the recommendation and follow-ups with a critical eye, do they sound like something your client would actually send? Where did you have to fix tone, accuracy, or professionalism?</p>
-              <p><strong>Example:</strong> "The first draft overstated our delivery timeline — tightened the language to match what we can actually commit to. Tone reads as professional and consistent with the client's voice."</p>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend title="The risks here, how you're guarding against them, and where a human stays in the loop.">Risks &amp; Human Review</legend>
-
-            <label for="risksSafeguards">Risks and Safeguards <span class="hint">(topics may be auto-filled from your document — add the specifics)</span></label>
-            <textarea id="risksSafeguards" rows="4"></textarea>
-            <button type="button" class="btn-help" data-help-for="risksSafeguards">Need help with this?</button>
-            <div class="help-panel" id="help-risksSafeguards" hidden>
-              <p><strong>Ask yourselves:</strong> What could go wrong if this solution is used carelessly, and what is your team doing to prevent it?</p>
-              <p><strong>Example:</strong> "Accuracy: verify generated claims before they go out" / "Overpromising: human review of outcomes, pricing, scope" / "Confidentiality: no client PII in public tools" / "Transparency: internal usage policy" / "Human approval: nothing sent without sign-off"</p>
-              <p>Cover accuracy, overpromising, confidentiality, transparency, and human approval.</p>
-            </div>
-
-            <label for="humanReview">Human Review / Handoff <span class="hint">(who checks the output before it reaches a client, and how)</span></label>
-            <textarea id="humanReview" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="humanReview">Need help with this?</button>
-            <div class="help-panel" id="help-humanReview" hidden>
-              <p><strong>Ask yourselves:</strong> At what exact point does a person check the work? What do they check for, and what happens if they reject it?</p>
-              <p><strong>Example:</strong> "Every draft proposal and follow-up is reviewed for accuracy, tone, and pricing before it's sent. Nothing goes to a client without that approval."</p>
-            </div>
+            <div id="d3f1Row"><label id="d3f1Label" for="d3f1">Item 1</label><textarea id="d3f1" rows="3"></textarea></div>
+            <div id="d3f2Row"><label id="d3f2Label" for="d3f2">Item 2</label><textarea id="d3f2" rows="3"></textarea></div>
+            <div id="d3f3Row"><label id="d3f3Label" for="d3f3">Item 3</label><textarea id="d3f3" rows="3"></textarea></div>
           </fieldset>
 
           <fieldset>
@@ -677,38 +543,17 @@
 
         <div class="wizard-step" data-step="5" hidden>
           <fieldset>
-            <legend title="What you tested your solution against, and what testing found. This step's deliverable.">Testing</legend>
-
-            <label for="testingCriteria">Testing Criteria <span class="hint">(one per line — what you scored each output against)</span></label>
-            <textarea id="testingCriteria" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="testingCriteria">Need help with this?</button>
-            <div class="help-panel" id="help-testingCriteria" hidden>
-              <p><strong>Ask yourselves:</strong> Before you can say your solution "worked," what did you actually judge it against?</p>
-              <p><strong>Example:</strong> "Accuracy: did it stay within the info we gave it" / "Personalization: did it reflect the specific client" / "Clarity" / "Usefulness" / "Efficiency: did it reduce meaningful manual work" / "Human editing required: how much rewriting before it was usable"</p>
-              <p>This is your rubric, stated once — the next field is what you found when you applied it.</p>
+            <legend id="d4Legend" title="This step's deliverable, one field per required item.">Deliverable 4</legend>
+            <button type="button" class="btn-help" data-help-for="d4f1">Need help with this?</button>
+            <div class="help-panel" id="help-d4f1" hidden>
+              <p><strong>Ask yourselves:</strong> How will you actually know this worked? Use real numbers where you have them.</p>
+              <p>For a before/after item: one per line, prefixed "Before:" / "After:" — it becomes a bar chart automatically when both sides use the same unit (e.g. both in hours).</p>
             </div>
 
-            <label for="testingNotes">Test Results &amp; Revisions <span class="hint">(what you tested, what failed, what you changed)</span></label>
-            <textarea id="testingNotes" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="testingNotes">Need help with this?</button>
-            <div class="help-panel" id="help-testingNotes" hidden>
-              <p><strong>Ask yourselves:</strong> What did you actually test your solution against? Where did a first attempt produce a weak or wrong output, and what did you change to fix it?</p>
-              <p><strong>Example:</strong> "Tested all 5 components against a consistent fictional client scenario. Component 2's first draft invented a delivery date we never provided — added an explicit 'do not invent dates' instruction and retested."</p>
-              <p>A polished final output with no record of testing doesn't show iteration — that's specifically what this field is for.</p>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend title="How you'll know the solution actually worked.">Measurement</legend>
-
-            <label for="successMeasures">Three Success Measures <span class="hint">(one per line, pick 3)</span></label>
-            <textarea id="successMeasures" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="successMeasures">Need help with this?</button>
-            <div class="help-panel" id="help-successMeasures" hidden>
-              <p><strong>Ask yourselves:</strong> How will you know this actually worked? Pick measures the client already tracks, or could easily start tracking.</p>
-              <p><strong>Example:</strong> "Proposal drafting time" / "Lead follow-up time" / "Proposal win rate"</p>
-              <p>Pick the 3 that matter most.</p>
-            </div>
+            <div id="d4f1Row"><label id="d4f1Label" for="d4f1">Item 1</label><textarea id="d4f1" rows="3"></textarea></div>
+            <div id="d4f2Row"><label id="d4f2Label" for="d4f2">Item 2</label><textarea id="d4f2" rows="3"></textarea></div>
+            <div id="d4f3Row"><label id="d4f3Label" for="d4f3">Item 3</label><textarea id="d4f3" rows="3"></textarea></div>
+            <div id="d4f4Row"><label id="d4f4Label" for="d4f4">Item 4</label><textarea id="d4f4" rows="3"></textarea></div>
           </fieldset>
 
           <fieldset>
@@ -724,72 +569,16 @@
 
         <div class="wizard-step" data-step="6" hidden>
           <fieldset>
-            <legend title="Your rollout plan, phased. This step's deliverable.">Implementation Plan</legend>
-
-            <label for="implementPilot">Days 1-30 — Pilot <span class="hint">(pilot recommendation: who, how long, baseline)</span></label>
-            <textarea id="implementPilot" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="implementPilot">Need help with this?</button>
-            <div class="help-panel" id="help-implementPilot" hidden>
-              <p><strong>Ask yourselves:</strong> Who's in the pilot, how long does it run, and what baseline are you measuring against?</p>
-              <p><strong>Example:</strong> "Pilot with 2-3 reps for 30 days. Track drafting time and follow-up time against the 14-hour/5-day baseline."</p>
+            <legend id="d5Legend" title="This step's deliverable, one field per required item.">Deliverable 5</legend>
+            <button type="button" class="btn-help" data-help-for="d5f1">Need help with this?</button>
+            <div class="help-panel" id="help-d5f1" hidden>
+              <p><strong>Ask yourselves:</strong> If the client only read this step, would they know what you're recommending and why? Lead with the bottom line.</p>
             </div>
 
-            <label for="implementTraining">Training Requirements <span class="hint">(what people need to learn before using it)</span></label>
-            <textarea id="implementTraining" rows="2"></textarea>
-            <button type="button" class="btn-help" data-help-for="implementTraining">Need help with this?</button>
-            <div class="help-panel" id="help-implementTraining" hidden>
-              <p><strong>Ask yourselves:</strong> What do pilot participants need to know before day one — the workflow, the tool, the risk-management rules?</p>
-              <p><strong>Example:</strong> "Train participants on the new workflow and risk-management rules before the pilot starts."</p>
-            </div>
-
-            <label for="implementHandoff">Human Handoff Points <span class="hint">(where a person takes over from AI during rollout)</span></label>
-            <textarea id="implementHandoff" rows="2"></textarea>
-            <button type="button" class="btn-help" data-help-for="implementHandoff">Need help with this?</button>
-            <div class="help-panel" id="help-implementHandoff" hidden>
-              <p><strong>Ask yourselves:</strong> During the actual rollout, at what points does a human have to step in and approve, override, or take over?</p>
-              <p><strong>Example:</strong> "Every AI output still requires human approval before it reaches a client — this doesn't change during the pilot."</p>
-            </div>
-
-            <label for="implementAdoptionRisks">Adoption Risks <span class="hint">(what could stop people from actually using this)</span></label>
-            <textarea id="implementAdoptionRisks" rows="2"></textarea>
-            <button type="button" class="btn-help" data-help-for="implementAdoptionRisks">Need help with this?</button>
-            <div class="help-panel" id="help-implementAdoptionRisks" hidden>
-              <p><strong>Ask yourselves:</strong> Even if the tool works, what could make reps not actually use it? Distrust of AI output, extra steps, unclear ownership?</p>
-              <p><strong>Example:</strong> "Reps may distrust AI-drafted proposals at first — mitigate by keeping human approval mandatory and sharing early wins from the pilot group."</p>
-            </div>
-
-            <label for="implementFeedback">Feedback Process <span class="hint">(how you collect input while the pilot runs)</span></label>
-            <textarea id="implementFeedback" rows="2"></textarea>
-            <button type="button" class="btn-help" data-help-for="implementFeedback">Need help with this?</button>
-            <div class="help-panel" id="help-implementFeedback" hidden>
-              <p><strong>Ask yourselves:</strong> How does the pilot group tell you what's working and what isn't, while it's still happening?</p>
-              <p><strong>Example:</strong> "Collect weekly feedback from the pilot group on output quality and how much editing was needed."</p>
-            </div>
-
-            <label for="implementImprove">Days 31-60 — Measure &amp; Improve <span class="hint">(what you evaluate, what you refine)</span></label>
-            <textarea id="implementImprove" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="implementImprove">Need help with this?</button>
-            <div class="help-panel" id="help-implementImprove" hidden>
-              <p><strong>Ask yourselves:</strong> After the pilot runs, what do you actually look at — drafting time, follow-up time, output quality, human editing, feedback? What do you change based on that?</p>
-              <p><strong>Example:</strong> "Compare drafting/follow-up times against baseline. Review pilot feedback and human-editing patterns. Refine the solution and the workflow based on what failed most often."</p>
-            </div>
-
-            <label for="implementScale">Days 61-90 — Scale Decision <span class="hint">(what determines go/no-go on wider rollout)</span></label>
-            <textarea id="implementScale" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="implementScale">Need help with this?</button>
-            <div class="help-panel" id="help-implementScale" hidden>
-              <p><strong>Ask yourselves:</strong> What has to be true for you to recommend scaling this beyond the pilot? What would make you NOT recommend it yet?</p>
-              <p><strong>Example:</strong> "Recommend scaling if drafting time and follow-up time both improved without a drop in proposal quality or win rate, and the pilot group actually adopted the workflow. Otherwise, extend the pilot and keep iterating."</p>
-            </div>
-
-            <label for="nextSteps">Final Recommendation <span class="hint">(one per line — the team's bottom line)</span></label>
-            <textarea id="nextSteps" rows="3"></textarea>
-            <button type="button" class="btn-help" data-help-for="nextSteps">Need help with this?</button>
-            <div class="help-panel" id="help-nextSteps" hidden>
-              <p><strong>Ask yourselves:</strong> If the client said yes today, what's the one-line bottom-line recommendation the team is making?</p>
-              <p><strong>Example:</strong> "The client should pilot the proposed workflow before broader implementation." / "Do not present untested targets as results."</p>
-              <p>Your first item becomes this slide's headline if the phases above are empty, so lead with the most concrete action.</p>
-            </div>
+            <div id="d5f1Row"><label id="d5f1Label" for="d5f1">Item 1</label><textarea id="d5f1" rows="3"></textarea></div>
+            <div id="d5f2Row"><label id="d5f2Label" for="d5f2">Item 2</label><textarea id="d5f2" rows="3"></textarea></div>
+            <div id="d5f3Row"><label id="d5f3Label" for="d5f3">Item 3</label><textarea id="d5f3" rows="3"></textarea></div>
+            <div id="d5f4Row"><label id="d5f4Label" for="d5f4">Item 4</label><textarea id="d5f4" rows="3"></textarea></div>
           </fieldset>
 
           <fieldset>
@@ -844,28 +633,33 @@
     });
   }
 
-  var PROMPT_FIELD_IDS = [];
-  for (var pn = 1; pn <= 5; pn++) {
-    PROMPT_FIELD_IDS.push("prompt" + pn + "Purpose", "prompt" + pn + "Text");
-  }
+  // The 5 wizard steps after Team Basics each own one of the project's
+  // fixed deliverables. DELIVERABLE_ROLE_SLUGS maps deliverable index
+  // (0-based) to the same internal role slug used for team ownership and
+  // slide uploads; DELIVERABLE_FIELD_COUNTS is the max number of item
+  // fields that deliverable slot ever needs across every assigned project
+  // (a project using fewer just hides the extra rows — see
+  // applyDeliverableLabels()).
+  var DELIVERABLE_ROLE_SLUGS = ["businessWorkflow", "aiSolution", "proposal", "testing", "implementation"];
+  var DELIVERABLE_FIELD_COUNTS = [4, 5, 3, 4, 4];
 
-  var FIELD_IDS = ["teamNumber"].concat(TEAM_MEMBER_FIELD_IDS, [
-    "teamName", "clientName", "objective",
-    "problemSummary", "keyChallenges", "baselineMetrics", "currentWorkflow", "workflow", "beforeAfter",
-    "solutionName", "solutionDescription"
-  ], PROMPT_FIELD_IDS, [
-    "sampleProposal", "followUpMessage1", "followUpMessage2", "followUpMessage3", "proposalQualityReview",
-    "risksSafeguards", "humanReview",
-    "testingCriteria", "testingNotes", "successMeasures",
-    "implementPilot", "implementTraining", "implementHandoff", "implementAdoptionRisks", "implementFeedback",
-    "implementImprove", "implementScale",
-    "nextSteps"
-  ]);
+  var DELIVERABLE_FIELD_IDS = [];
+  DELIVERABLE_ROLE_SLUGS.forEach(function (slug, i) {
+    for (var j = 1; j <= DELIVERABLE_FIELD_COUNTS[i]; j++) {
+      DELIVERABLE_FIELD_IDS.push("d" + (i + 1) + "f" + j);
+    }
+  });
+
+  var FIELD_IDS = ["teamNumber", "presetProjectSelect"].concat(TEAM_MEMBER_FIELD_IDS, [
+    "teamName", "clientName", "objective"
+  ], DELIVERABLE_FIELD_IDS);
 
   // Which Team Members field (Step 2) owns each fixed deliverable role, and
   // the display label for that role. ownerName() reads the live value at
   // render time, so the name shown always matches what's currently typed in
-  // Step 2 — nobody's real name is ever hardcoded.
+  // Step 2 — nobody's real name is ever hardcoded. ROLE_LABELS starts at a
+  // generic default and is overwritten by applyDeliverableLabels() once a
+  // project is chosen (or reset by it when cleared).
   var ROLE_OWNER_FIELD = {
     businessWorkflow: "teamMember3Name",
     aiSolution: "teamMember2Name",
@@ -874,11 +668,11 @@
     implementation: "teamMember6Name"
   };
   var ROLE_LABELS = {
-    businessWorkflow: "Business & Workflow",
-    aiSolution: "Proposed Solution",
-    proposal: "Recommendation & Risk Review",
-    testing: "Testing & Measurement",
-    implementation: "Implementation Plan"
+    businessWorkflow: "Deliverable 1",
+    aiSolution: "Deliverable 2",
+    proposal: "Deliverable 3",
+    testing: "Deliverable 4",
+    implementation: "Deliverable 5"
   };
 
   function ownerName(data, roleSlug) {
@@ -888,13 +682,13 @@
   }
 
   var STEPS = [
-    { title: "Choose Your Project", roleSlug: "", help: "Choose your assigned project from the list. We'll automatically pull in the client name, business problem, and objective from that project's brief — nothing is invented, only what's actually in it." },
+    { title: "Choose Your Project", roleSlug: "", help: "Choose your assigned project from the list. We'll automatically pull in the client name and objective from that project's brief — nothing is invented, only what's actually in it." },
     { title: "Team & Project Basics", roleSlug: "", help: "Whole team — team number, everyone's name/role, your consulting team name, the client, the objective, and your logo." },
-    { title: "Business & Workflow", roleSlug: "businessWorkflow", help: "The business problem, key challenges, baseline numbers, current vs. proposed workflow, and the before/after comparison." },
-    { title: "Proposed Solution", roleSlug: "aiSolution", help: "The recommended solution, and the 5 tested components that prove it works." },
-    { title: "Recommendation & Risk Review", roleSlug: "proposal", help: "The recommendation, the 3-message follow-up sequence, quality review of those outputs, and the risks/safeguards and human review requirements." },
-    { title: "Testing & Measurement", roleSlug: "testing", help: "The testing criteria, what testing found, and the three success measures." },
-    { title: "Implementation & Adoption", roleSlug: "implementation", help: "The phased rollout plan — pilot, training, handoffs, adoption risks, feedback, measure & improve, scale decision — plus the team's final recommendation." },
+    { title: "Deliverable 1", roleSlug: "businessWorkflow", help: "This step's deliverable — one field per required item." },
+    { title: "Deliverable 2", roleSlug: "aiSolution", help: "This step's deliverable — one field per required item." },
+    { title: "Deliverable 3", roleSlug: "proposal", help: "This step's deliverable — one field per required item." },
+    { title: "Deliverable 4", roleSlug: "testing", help: "This step's deliverable — one field per required item." },
+    { title: "Deliverable 5", roleSlug: "implementation", help: "This step's deliverable — one field per required item." },
     { title: "Review & Export", roleSlug: "", help: "You're done. Check the live preview on the right, then use Save & Get Link or Export HTML above whenever you're ready." }
   ];
 
@@ -920,11 +714,6 @@
     return str.split(/\r?\n\s*\r?\n/).map(function (s) { return s.trim(); }).filter(Boolean);
   }
 
-  function parseWorkflow(str) {
-    if (!str) return [];
-    var normalized = str.replace(/\r?\n/g, " ").replace(/→/g, "->");
-    return normalized.split("->").map(function (s) { return s.trim(); }).filter(Boolean);
-  }
 
   // Detects an optional "Fact:" / "Recommendation:" / "Before:" / "After:" label
   // at the start of a line.
@@ -1004,13 +793,13 @@
   // right after applyFormData() to put a persistent reminder back so that
   // doesn't happen.
   function showAlreadyFilledNotices() {
-    var briefFilled = ["clientName", "problemSummary", "objective"].some(function (id) {
+    var briefFilled = ["clientName", "objective"].some(function (id) {
       var el = document.getElementById(id);
       return el && el.value.trim();
     });
     if (briefFilled) {
       var briefEl = document.getElementById("uploadSummary");
-      briefEl.textContent = "This project already has brief-derived fields filled in below (Client, Problem Summary, Objective, etc.) — no need to upload again unless you want to replace them.";
+      briefEl.textContent = "This project's fields are already filled in below (Client, Objective, and the deliverable steps) — no need to pick it again unless you want to replace them.";
       briefEl.hidden = false;
     }
 
@@ -1234,98 +1023,183 @@
     return members;
   }
 
-  // The fixed company briefs this cohort assigns one-per-team. Each field is
-  // hand-mapped from the actual brief text. Selecting one fills the same
-  // fields finishUpload() would from a real upload, and keeps the full brief
-  // text available under "View Original Brief".
+  // Generic fallback deliverable labels shown before any project is chosen
+  // (or after Clear). Field counts must match DELIVERABLE_FIELD_COUNTS.
+  var DEFAULT_DELIVERABLES = [
+    { title: "Deliverable 1", fields: ["Item 1", "Item 2", "Item 3", "Item 4"] },
+    { title: "Deliverable 2", fields: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"] },
+    { title: "Deliverable 3", fields: ["Item 1", "Item 2", "Item 3"] },
+    { title: "Deliverable 4", fields: ["Item 1", "Item 2", "Item 3", "Item 4"] },
+    { title: "Deliverable 5", fields: ["Item 1", "Item 2", "Item 3", "Item 4"] }
+  ];
+
+  // The fixed company briefs this cohort assigns one-per-team. Each field —
+  // both the top-level clientName/objective and each deliverable's own item
+  // labels — is hand-mapped from the actual brief text, since these briefs
+  // use different deliverable names and item counts per company (e.g.
+  // Summit's don't include a "pain points summary" item at all). Selecting
+  // one fills the same fields finishUpload() would from a real upload, and
+  // keeps the full brief text available under "View Original Brief".
   var PRESET_PROJECTS = {
     greenleaf: {
       name: "GreenLeaf Home Services — Customer Support Enhancement",
       extracted: {
         clientName: "GreenLeaf Home Services",
-        problemSummary: "GreenLeaf's rapid growth over the past five years has outpaced the capacity of its customer support infrastructure. The company currently operates with a nine-person support team working two overlapping shifts to cover inquiries from 7:00 AM to 9:00 PM MST, seven days a week. Despite the team's dedication, the volume and variety of requests have created persistent operational bottlenecks.",
         objective: "Design and implement an AI-enhanced customer support workflow that reduces initial response time by 50%, improves request categorization accuracy, provides 24/7 initial support capabilities, and maintains a personalized customer experience.",
-        baselineMetrics: "Response time averages 4-6 hours across all channels, well above the 1-hour industry benchmark\nCustomer satisfaction (CSAT) scores have declined from 4.2 to 3.7 stars over the past 12 months\nAfter-hours callback queue regularly exceeds 40 messages\nApproximately 18% of daily inquiries are repeat contacts from unanswered requests",
-        beforeAfter: "Before: 4-6 hours average response time\nAfter: "
+        d1f1: "GreenLeaf's rapid growth over the past five years has outpaced the capacity of its customer support infrastructure. The company currently operates with a nine-person support team working two overlapping shifts to cover inquiries from 7:00 AM to 9:00 PM MST, seven days a week.\n\nResponse time averages 4-6 hours across all channels, well above the 1-hour industry benchmark\nCustomer satisfaction (CSAT) scores have declined from 4.2 to 3.7 stars over the past 12 months\nAfter-hours callback queue regularly exceeds 40 messages\nApproximately 18% of daily inquiries are repeat contacts from unanswered requests",
+        d4f2: "Before: 4-6 hours average response time\nAfter: "
       },
+      deliverables: [
+        { title: "AI Implementation Plan", fields: ["Current Workflow Pain Points Summary", "Recommended AI Tool (with justification)", "Basic Integration Approach", "Implementation Timeline & Budget Estimate"] },
+        { title: "Prototype AI Customer Support Library", fields: ["Working Chatbot Demo (using free/accessible AI tools)", "10 Tested Prompts for Common Customer Scenarios", "Sample Responses Showing AI-Human Handoff", "Demonstration Video (2-3 minutes) — link or description"] },
+        { title: "Quick Start Guide", fields: ["Step-by-Step Guide for Staff Using AI Tools", "One-Page Quick Reference Card", "Top 5 FAQs About the New System"] },
+        { title: "Success Metrics Plan", fields: ["5 Key KPIs to Track", "Simple Before/After Comparison", "90-Day Monitoring Checklist"] },
+        { title: "Executive Presentation", fields: ["10-Minute Presentation Outline (8-10 slides)", "ROI Summary & Cost-Benefit Highlights", "Implementation Roadmap", "Next Steps Recommendation"] }
+      ],
       rawText: "GreenLeaf Home Services — a regional home maintenance and repair company with 150 employees serving residential customers in Colorado.\n\nBusiness Challenge: GreenLeaf's rapid growth over the past five years has outpaced the capacity of its customer support infrastructure. The company currently operates with a nine-person support team working two overlapping shifts to cover inquiries from 7:00 AM to 9:00 PM MST, seven days a week. Despite the team's dedication, the volume and variety of requests have created persistent operational bottlenecks.\n\nCurrent State of Customer Support:\n- Response time averages 4-6 hours across all channels, well above the 1-hour industry benchmark for home services\n- Customer satisfaction (CSAT) scores have declined from 4.2 to 3.7 stars over the past 12 months\n- The team manually categorizes and routes every inquiry — there is no automated triage system\n- After-hours inquiries (9:00 PM - 7:00 AM) are handled by voicemail and email only, with a next-morning callback queue that regularly exceeds 40 messages\n- Approximately 18% of daily inquiries are repeat contacts from customers following up on unanswered requests\n\nProject Objectives: Design and implement an AI-enhanced customer support workflow that reduces initial response time by 50%, improves request categorization accuracy, provides 24/7 initial support capabilities, and maintains a personalized customer experience."
     },
     summit: {
       name: "Summit Outdoor Gear — Content Marketing Acceleration",
       extracted: {
         clientName: "Summit Outdoor Gear",
-        problemSummary: "Our marketing team currently produces 8-10 blog posts, 20 social media posts, and 4 email campaigns monthly. Competitors are publishing 3x more content and ranking higher in search results. Our small marketing team (3 people) is overwhelmed, leading to inconsistent posting schedules and missed opportunities during peak seasons.",
-        objective: "Create an AI-powered content creation system that increases content output by 200% without additional headcount, maintains brand voice consistency, improves SEO performance, and reduces content creation time per piece by 60%.",
-        baselineMetrics: "8-10 blog posts, 20 social media posts, and 4 email campaigns produced monthly\nCompetitors are publishing 3x more content and ranking higher in search results\nMarketing team is 3 people",
-        beforeAfter: "Before: 8-10 blog posts produced monthly\nAfter: "
+        objective: "Create an AI-powered content creation system that increases content output by 200% without additional headcount, maintains brand voice consistency, improves SEO performance, and reduces content creation time per piece by 60%."
       },
+      deliverables: [
+        { title: "AI Content Strategy Document", fields: ["Recommended AI Tools (with justification)", "Brand Voice Guidelines for Prompts", "Content Workflow with Quality Control Process"] },
+        { title: "Sample Content Portfolio", fields: ["2 Blog Posts (800-1000 words each, AI-assisted)", "12 Social Media Posts Across 3 Platforms", "1 Email Campaign Sequence (3 emails)", "Product Descriptions for 5 Items", "Workflow Notes Showing AI Process for Each"] },
+        { title: "Prompt Library (15 Prompts)", fields: ["15 Tested & Refined Prompts for Different Content Types", "Prompt Examples (blog intro, social post, product description, email subject)", "Quick Tips for Adapting Prompts"] },
+        { title: "SEO & ROI Analysis", fields: ["Keyword Research Using AI Tools", "3 Competitor Content Examples Analyzed", "Top 5 Content Opportunities Identified", "Time/Cost Savings Calculation"] },
+        { title: "Executive Presentation", fields: ["10-Minute Presentation Outline (8-10 slides)", "Content Samples Showcase", "ROI Projections", "Recommended Rollout Plan"] }
+      ],
       rawText: "Summit Outdoor Gear — an e-commerce retailer specializing in hiking, camping, and outdoor equipment with annual revenue of $8M and a team of 35 employees.\n\nBusiness Challenge: Our marketing team currently produces 8-10 blog posts, 20 social media posts, and 4 email campaigns monthly. Competitors are publishing 3x more content and ranking higher in search results. Our small marketing team (3 people) is overwhelmed, leading to inconsistent posting schedules and missed opportunities during peak seasons.\n\nProject Objectives: Create an AI-powered content creation system that increases content output by 200% without additional headcount, maintains brand voice consistency, improves SEO performance, and reduces content creation time per piece by 60%."
     },
     brightpath: {
       name: "BrightPath Technologies — Recruiting & Onboarding Acceleration",
       extracted: {
         clientName: "BrightPath Technologies",
-        problemSummary: "BrightPath has grown from 40 to 90 employees in eighteen months and plans to add 30 more roles this year. The HR team, a lean two person function, is struggling to keep pace with the volume of applications and the demands of getting new hires up to speed quickly.",
         objective: "Design and prototype an AI enhanced recruiting and onboarding workflow that reduces resume screening time by 70%, standardizes onboarding materials by role and department, improves time-to-hire by 30%, and maintains fair, unbiased, and legally compliant hiring practices.",
-        baselineMetrics: "Average time-to-hire is 47 days, well above the company's 30-day target\nHR manually reviews roughly 200 resumes for every open role\nNew hire onboarding consumes 3 full days of one-on-one time from managers per hire\n22% of new hires report feeling unprepared after their first week",
-        beforeAfter: "Before: 47 days average time-to-hire\nAfter: "
+        d1f1: "BrightPath has grown from 40 to 90 employees in eighteen months and plans to add 30 more roles this year. The HR team, a lean two person function, is struggling to keep pace with the volume of applications and the demands of getting new hires up to speed quickly.\n\nAverage time-to-hire is 47 days, well above the company's 30-day target\nHR manually reviews roughly 200 resumes for every open role\nNew hire onboarding consumes 3 full days of one-on-one time from managers per hire\n22% of new hires report feeling unprepared after their first week",
+        d4f2: "Before: 47 days average time-to-hire\nAfter: "
       },
+      deliverables: [
+        { title: "AI Implementation Plan", fields: ["Current Hiring & Onboarding Pain Points Summary", "Recommended AI Tool (with justification)", "Basic Integration Approach (with existing applicant tracking process)", "Implementation Timeline & Budget Estimate"] },
+        { title: "Prototype AI Screening & Onboarding Toolkit", fields: ["Working Resume-Screening & Interview-Question Demo", "10 Tested Prompts (screening criteria, interview questions, onboarding content)", "Sample Outputs Showing Required Human Review Checkpoint", "Demonstration Video (2-3 minutes) — link or description"] },
+        { title: "Quick Start Guide", fields: ["Step-by-Step Guide for HR Staff & Hiring Managers", "One-Page Quick Reference Card", "Top 5 FAQs About the New Process"] },
+        { title: "Success Metrics Plan", fields: ["5 Key KPIs to Track", "Simple Before/After Comparison", "90-Day Monitoring Checklist"] },
+        { title: "Executive Presentation", fields: ["10-Minute Presentation Outline (8-10 slides)", "ROI Summary & Cost-Benefit Highlights", "Implementation Roadmap", "Next Steps Recommendation"] }
+      ],
       rawText: "BrightPath Technologies — a fast-growing SaaS startup with 90 employees, headquartered in Austin, Texas, building project-management software for construction firms.\n\nBusiness Challenge: BrightPath has grown from 40 to 90 employees in eighteen months and plans to add 30 more roles this year. The HR team, a lean two person function, is struggling to keep pace with the volume of applications and the demands of getting new hires up to speed quickly.\n\nCurrent State of Hiring & Onboarding:\n- Average time-to-hire is 47 days, well above the company's 30-day target\n- HR manually reviews roughly 200 resumes for every open role\n- New hire onboarding consumes 3 full days of one-on-one time from managers per hire\n- Onboarding materials are inconsistent and vary widely by department\n- 22% of new hires report feeling unprepared after their first week, based on recent pulse surveys\n\nProject Objectives: Design and prototype an AI enhanced recruiting and onboarding workflow that reduces resume screening time by 70%, standardizes onboarding materials by role and department, improves time-to-hire by 30%, and maintains fair, unbiased, and legally compliant hiring practices."
     },
     meridian: {
       name: "Meridian Consulting Group — Sales Proposal & Client Communication Enhancement",
       extracted: {
         clientName: "Meridian Consulting Group",
-        problemSummary: "Meridian's sales team is losing deals not because of weak expertise, but because proposals take too long to produce and client follow-up is inconsistent. As the pipeline has grown, the eight-person sales team has been unable to keep writing quality and response speed at the level clients expect.",
         objective: "Design and prototype an AI-powered sales enablement system that cuts proposal drafting time by 50%, standardizes compelling client-specific proposal language, and reduces follow-up response time to under 24 hours.",
-        baselineMetrics: "An average proposal takes 14 hours to draft from scratch\nProposal win rate has dropped from 32% to 24% over the past year\n35% of leads go more than 5 days without a follow-up email\nSales team spends approximately 40% of its time writing rather than selling",
-        beforeAfter: "Before: 14 hours to draft a proposal\nAfter: "
+        d1f1: "Meridian's sales team is losing deals not because of weak expertise, but because proposals take too long to produce and client follow-up is inconsistent. As the pipeline has grown, the eight-person sales team has been unable to keep writing quality and response speed at the level clients expect.\n\nAn average proposal takes 14 hours to draft from scratch\nProposal win rate has dropped from 32% to 24% over the past year\n35% of leads go more than 5 days without a follow-up email\nSales team spends approximately 40% of its time writing rather than selling",
+        d4f2: "Before: 14 hours to draft a proposal\nAfter: "
       },
+      deliverables: [
+        { title: "AI Sales Enablement Plan", fields: ["Current Proposal & Follow-Up Workflow Pain Points Summary", "Recommended AI Tool (with justification)", "Basic Integration Approach (with existing CRM process)", "Implementation Timeline & Budget Estimate"] },
+        { title: "Prototype Proposal & Follow-Up Toolkit", fields: ["2 Sample Client Proposals (AI-assisted)", "1 Follow-Up Email Sequence (3 emails)", "10 Tested Prompts (proposals, follow-ups, objection handling)", "Before/After Comparison of Drafting Time"] },
+        { title: "Quick Start Guide", fields: ["Step-by-Step Guide for Sales Staff", "One-Page Quick Reference Card", "Top 5 FAQs About the New Workflow"] },
+        { title: "Success Metrics Plan", fields: ["5 Key KPIs to Track", "Simple Before/After Comparison", "90-Day Monitoring Checklist"] },
+        { title: "Executive Presentation", fields: ["10-Minute Presentation Outline (8-10 slides)", "ROI Summary & Cost-Benefit Highlights", "Implementation Roadmap", "Next Steps Recommendation"] }
+      ],
       rawText: "Meridian Consulting Group — a 60-person B2B management consulting firm based in Chicago, serving mid-market manufacturing and logistics clients.\n\nBusiness Challenge: Meridian's sales team is losing deals not because of weak expertise, but because proposals take too long to produce and client follow-up is inconsistent. As the pipeline has grown, the eight-person sales team has been unable to keep writing quality and response speed at the level clients expect.\n\nCurrent State of Sales Communication:\n- An average proposal takes 14 hours to draft from scratch\n- Proposal win rate has dropped from 32% to 24% over the past year\n- 35% of leads go more than 5 days without a follow-up email\n- There is no standardized proposal template or messaging library\n- The sales team spends approximately 40% of its time writing rather than selling\n\nProject Objectives: Design and prototype an AI-powered sales enablement system that cuts proposal drafting time by 50%, standardizes compelling client-specific proposal language, and reduces follow-up response time to under 24 hours."
     },
     horizon: {
       name: "Horizon Corporate Events — Event Planning & Logistics Optimization",
       extracted: {
         clientName: "Horizon Corporate Events",
-        problemSummary: "Horizon's event planners are overwhelmed by the manual, routine tasks involved in organizing events. They spend excessive time researching venues, drafting repetitive vendor outreach emails, and making complex logistical decisions. This administrative burden limits their ability to take on new clients and focus on big-picture creative event design.",
         objective: "Design and prototype an AI-powered event planning system that reduces initial venue and vendor research time by 50%, automates the drafting of routine vendor communications and inbox management, generates creative event themes and schedules using AI as a collaboration tool, and maintains strict privacy regarding unannounced corporate client data.",
-        baselineMetrics: "Planners spend an average of 12 hours manually researching venues and comparing vendor options for a single event\nDrafting customized vendor emails and follow-ups consumes 30% of a planner's week\nConsolidating vendor schedules into a client itinerary is done manually and is prone to errors",
-        beforeAfter: "Before: 12 hours researching venues per event\nAfter: "
+        d1f1: "Horizon's event planners are overwhelmed by the manual, routine tasks involved in organizing events. They spend excessive time researching venues, drafting repetitive vendor outreach emails, and making complex logistical decisions.\n\nPlanners spend an average of 12 hours manually researching venues and comparing vendor options for a single event\nDrafting customized vendor emails and follow-ups consumes 30% of a planner's week\nConsolidating vendor schedules into a client itinerary is done manually and is prone to errors",
+        d4f2: "Before: 12 hours researching venues per event\nAfter: "
       },
+      deliverables: [
+        { title: "AI Implementation Plan", fields: ["Current Event Planning Pain Points Summary", "Recommended Generative AI Tool (with justification for event research)", "Basic Integration Approach (with existing workflow)", "Implementation Timeline & Budget Estimate"] },
+        { title: "Prototype AI Event Planning Toolkit", fields: ["10 Tested Prompts Using Few-Shot Prompting (venues, vendor emails, themes)", "2 Sample Event Itineraries (AI-generated)", "Sample Outputs Showing Required Human Review Checkpoint for Accuracy", "Demonstration Video (2-3 minutes) — link or description"] },
+        { title: "Quick Start Guide", fields: ["Step-by-Step Guide for Planners (event logistics)", "One-Page Quick Reference Card for Prompt Engineering", "Top 5 FAQs About the New Process"] },
+        { title: "Success Metrics Plan", fields: ["5 Key KPIs to Track (e.g. time saved on research)", "Simple Before/After Comparison", "90-Day Monitoring Checklist"] },
+        { title: "Executive Presentation", fields: ["10-Minute Presentation Outline (8-10 slides)", "ROI Summary & Cost-Benefit Highlights", "Implementation Roadmap", "Next Steps Recommendation"] }
+      ],
       rawText: "Horizon Corporate Events — a 45-person event planning agency in Seattle, organizing corporate retreats, conferences, and team-building offsites.\n\nBusiness Challenge: Horizon's event planners are overwhelmed by the manual, routine tasks involved in organizing events. They spend excessive time researching venues, drafting repetitive vendor outreach emails, and making complex logistical decisions. This administrative burden limits their ability to take on new clients and focus on big-picture creative event design.\n\nCurrent State of Event Planning:\n- Planners spend an average of 12 hours manually researching venues and comparing vendor options for a single event.\n- Drafting customized emails and following up with caterers, AV teams, and speakers consumes 30% of a planner's week.\n- Consolidating various vendor schedules into a cohesive client itinerary is done manually and is prone to errors.\n- The agency's flooded inbox often leads to delayed responses to vendor inquiries.\n- Planners struggle to find the time needed to brainstorm creative themes for clients.\n\nProject Objectives: Design and prototype an AI-powered event planning system that reduces initial venue and vendor research time by 50%, automates the drafting of routine vendor communications and inbox management, generates creative event themes and schedules using AI as a collaboration tool, and maintains strict privacy regarding unannounced corporate client data."
     },
     apex: {
       name: "Apex Retail Analytics — Market Data Analysis & Reporting Enhancement",
       extracted: {
         clientName: "Apex Retail Analytics",
-        problemSummary: "Apex's analysts spend the majority of their time executing routine tasks, specifically analyzing dense spreadsheets and summarizing financial notes. Because drafting detailed sales reports from scratch requires so much time and effort, analysts are struggling to keep up with client demand and are missing opportunities to provide deeper, strategic consulting.",
         objective: "Design and prototype an AI-enhanced reporting workflow that cuts the time spent analyzing and summarizing dense spreadsheets by 60%, uses generative AI to rapidly draft detailed sales reports, effectively highlights key data insights for clients, and generates engaging presentation outlines based on data findings.",
-        baselineMetrics: "Analysts spend up to 15 hours a week manually summarizing notes and dense data spreadsheets\nDrafting a standard detailed sales report takes 3 full business days\nNo standardized process for quickly pulling high-level insights for rapid client requests",
-        beforeAfter: "Before: 15 hours a week summarizing data\nAfter: "
+        d1f1: "Apex's analysts spend the majority of their time executing routine tasks, specifically analyzing dense spreadsheets and summarizing financial notes. Because drafting detailed sales reports from scratch requires so much time and effort, analysts are struggling to keep up with client demand.\n\nAnalysts spend up to 15 hours a week manually summarizing notes and dense data spreadsheets\nDrafting a standard detailed sales report takes 3 full business days\nNo standardized process for quickly pulling high-level insights for rapid client requests",
+        d4f2: "Before: 15 hours a week summarizing data\nAfter: "
       },
+      deliverables: [
+        { title: "AI Implementation Plan", fields: ["Current Reporting & Analysis Pain Points Summary", "Recommended AI Tool (focusing on data handling and privacy)", "Basic Integration Approach", "Implementation Timeline & Budget Estimate"] },
+        { title: "Prototype AI Reporting Toolkit", fields: ["10 Tested Prompts (summarizing data, key insights, report sections)", "1 Sample Detailed Sales Report (AI-assisted)", "1 Sample Presentation Outline (AI-generated)", "Demonstration Video (2-3 minutes) — link or description"] },
+        { title: "Quick Start Guide", fields: ["Step-by-Step Guide for Analysts (data synthesis)", "One-Page Quick Reference Card", "Top 5 FAQs About the New Workflow"] },
+        { title: "Success Metrics Plan", fields: ["5 Key KPIs to Track", "Simple Before/After Comparison", "90-Day Monitoring Checklist"] },
+        { title: "Executive Presentation", fields: ["10-Minute Presentation Outline (8-10 slides)", "ROI Summary & Cost-Benefit Highlights", "Implementation Roadmap", "Next Steps Recommendation"] }
+      ],
       rawText: "Apex Retail Analytics — a 75-person consulting firm in Chicago that provides retail market insights and sales trend analysis for mid-sized retail chains.\n\nBusiness Challenge: Apex's analysts spend the majority of their time executing routine tasks, specifically analyzing dense spreadsheets and summarizing financial notes. Because drafting detailed sales reports from scratch requires so much time and effort, analysts are struggling to keep up with client demand and are missing opportunities to provide deeper, strategic consulting.\n\nCurrent State of Data Reporting:\n- Analysts spend up to 15 hours a week manually summarizing notes and dense data spreadsheets.\n- Drafting a standard detailed sales report takes 3 full business days.\n- Key insights are sometimes buried because analysts are fatigued by routine formatting tasks.\n- There is no standardized process for quickly pulling high-level insights for rapid client requests.\n- Junior analysts frequently struggle to format presentations engagingly.\n\nProject Objectives: Design and prototype an AI-enhanced reporting workflow that cuts the time spent analyzing and summarizing dense spreadsheets by 60%, uses generative AI to rapidly draft detailed sales reports, effectively highlights key data insights for clients, and generates engaging presentation outlines based on data findings."
     },
     nexus: {
       name: "Nexus Design Studio — Project Management & Meeting Workflow Automation",
       extracted: {
         clientName: "Nexus Design Studio",
-        problemSummary: "The project management (PM) team at Nexus is drowning in administrative tasks. They spend too much time manually summarizing meeting notes, tracking action items, and drafting project kickoff outlines. This leaves them with never enough time to tackle the work that actually matters to the success of the app builds.",
         objective: "Design and prototype an AI productivity system that automates the summarizing of meeting notes and extraction of action items, reduces the time needed to draft project outlines and email responses by 70%, uses generative AI as a collaborative brainstorming tool for product features, and evaluates the optimal AI tools for different routine PM tasks.",
-        baselineMetrics: "PMs spend 8-10 hours a week summarizing notes from client meetings and internal standups\nDrafting a comprehensive project kickoff outline takes a full day\nAction items are often lost from meeting transcripts",
-        beforeAfter: "Before: 8-10 hours a week summarizing meeting notes\nAfter: "
+        d1f1: "The project management (PM) team at Nexus is drowning in administrative tasks. They spend too much time manually summarizing meeting notes, tracking action items, and drafting project kickoff outlines.\n\nPMs spend 8-10 hours a week summarizing notes from client meetings and internal standups\nDrafting a comprehensive project kickoff outline takes a full day\nAction items are often lost from meeting transcripts",
+        d4f2: "Before: 8-10 hours a week summarizing meeting notes\nAfter: "
       },
+      deliverables: [
+        { title: "AI Implementation Plan", fields: ["Current Workflow Pain Points Summary", "Recommended AI Tools (for meeting synthesis and outlining)", "Basic Integration Approach (with current project management software)", "Implementation Timeline & Budget Estimate"] },
+        { title: "Prototype AI Workflow Assistant", fields: ["10 Tested Prompts (meeting summarization, email drafting, brainstorming)", "2 Sample Meeting Summaries with Extracted Action Items", "1 Sample Project Outline (AI-generated)", "Demonstration Video (2-3 minutes) — link or description"] },
+        { title: "Quick Start Guide", fields: ["Step-by-Step Guide for PMs (new AI workflow)", "One-Page Quick Reference Card for Effective Prompting", "Top 5 FAQs About the New System"] },
+        { title: "Success Metrics Plan", fields: ["5 Key KPIs to Track", "Simple Before/After Comparison", "90-Day Monitoring Checklist"] },
+        { title: "Executive Presentation", fields: ["10-Minute Presentation Outline (8-10 slides)", "ROI Summary & Cost-Benefit Highlights", "Implementation Roadmap", "Next Steps Recommendation"] }
+      ],
       rawText: "Nexus Design Studio — a 50-person digital product design agency in New York, managing multiple concurrent app development projects for diverse clients.\n\nBusiness Challenge: The project management (PM) team at Nexus is drowning in administrative tasks. They spend too much time manually summarizing meeting notes, tracking action items, and drafting project kickoff outlines. This leaves them with never enough time to tackle the work that actually matters to the success of the app builds.\n\nCurrent State of Project Management Workflow:\n- PMs spend 8-10 hours a week just summarizing notes from client meetings and internal standups.\n- Drafting a comprehensive project kickoff outline takes a full day.\n- Action items are often lost because of the manual effort required to extract them from meeting transcripts.\n- The flooded PM inbox causes delays in responding to routine client status updates.\n- Creative brainstorming for app features is siloed and rarely collaborative.\n\nProject Objectives: Design and prototype an AI productivity system that automates the summarizing of meeting notes and extraction of action items, reduces the time needed to draft project outlines and email responses by 70%, uses generative AI as a collaborative brainstorming tool for product features, and evaluates the optimal AI tools for different routine PM tasks."
     }
   };
 
+  // Returns the [5] deliverable definitions for the given preset key, or the
+  // generic fallback when no project (or an unrecognized one) is selected.
+  function deliverablesForProject(key) {
+    var preset = key && PRESET_PROJECTS[key];
+    return (preset && preset.deliverables) || DEFAULT_DELIVERABLES;
+  }
+
+  // Rewrites the Steps 3-7 legends/labels, the team-member ownership hints,
+  // and the internal STEPS/ROLE_LABELS titles to match the given project's
+  // actual deliverable names and item counts — called on Step 1 selection,
+  // on Clear, and after restoring a draft or a Save & Get Link so the labels
+  // always match whichever project that data belongs to.
+  function applyDeliverableLabels(key) {
+    var deliverables = deliverablesForProject(key);
+    DELIVERABLE_ROLE_SLUGS.forEach(function (slug, i) {
+      var d = deliverables[i];
+      var n = i + 1;
+      document.getElementById("d" + n + "Legend").textContent = d.title;
+      STEPS[n + 1].title = d.title;
+      ROLE_LABELS[slug] = d.title;
+      for (var j = 1; j <= DELIVERABLE_FIELD_COUNTS[i]; j++) {
+        var row = document.getElementById("d" + n + "f" + j + "Row");
+        if (j <= d.fields.length) {
+          row.hidden = false;
+          document.getElementById("d" + n + "f" + j + "Label").textContent = d.fields[j - 1];
+        } else {
+          row.hidden = true;
+        }
+      }
+    });
+    var hintOwnerOf = { businessWorkflow: "teamMember3Hint", aiSolution: "teamMember2Hint", proposal: "teamMember4Hint", testing: "teamMember5Hint", implementation: "teamMember6Hint" };
+    DELIVERABLE_ROLE_SLUGS.forEach(function (slug, i) {
+      var hintEl = document.getElementById(hintOwnerOf[slug]);
+      hintEl.textContent = "Owns Step " + (i + 3) + " — " + deliverables[i].title;
+    });
+  }
+
   var EXTRACTABLE_FIELDS = [
-    { id: "teamNumber", label: "Team Number" },
     { id: "clientName", label: "Client / Company Name" },
-    { id: "problemSummary", label: "Problem Summary" },
-    { id: "objective", label: "Project Objective" },
-    { id: "risksSafeguards", label: "Risk topics" },
-    { id: "baselineMetrics", label: "Baseline Metrics" },
-    { id: "beforeAfter", label: "Before/After starting point" }
+    { id: "objective", label: "Project Objective" }
   ];
 
   function describeExtraction(extracted) {
@@ -1334,10 +1208,7 @@
     var msg = "";
     if (found.length) msg += "Found for this project: " + found.join(", ") + ". ";
     if (missing.length) msg += "Couldn't find: " + missing.join(", ") + " — fill those in yourself. ";
-    if (extracted.baselineMetrics) {
-      msg += "Found the specific numbers your solution has to improve (" + extracted.baselineMetrics.split("\n").join("; ") + ") — pre-filled into Baseline Metrics, and started in Before/After so you just need to add your team's result. ";
-    }
-    msg += "Review everything on the next steps before moving on — nothing here is guessed, only what was actually in the brief.";
+    msg += "Steps 3-7 have been relabeled to match this project's actual deliverables — some fields are pre-filled from the brief. Review everything before moving on.";
     return msg;
   }
 
@@ -1374,7 +1245,6 @@
     var preparedDate = new Date().toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
     var confidentialTag = "Strictly Confidential — Prepared for " + (data.clientName || "Internal Review");
     var subtitleParts = [];
-    if (data.solutionName) subtitleParts.push(data.solutionName);
     if (data.teamName) subtitleParts.push("Prepared by " + data.teamName);
     var html = '<section class="prev-hero">';
     html += '<p class="prev-confidential-tag">' + escapeHtml(confidentialTag) + "</p>";
@@ -1405,31 +1275,6 @@
 
   // Synthesizes a top-line summary purely from what the team already wrote —
   // it re-displays their own fields together, never invents new claims.
-  function renderExecutiveSummary(data) {
-    var problem = data.problemSummary ? parseLabel(data.problemSummary).text : "";
-    var solutionText = [
-      data.solutionName || "",
-      data.solutionDescription ? parseLabel(data.solutionDescription).text : ""
-    ].filter(Boolean).join(" — ");
-    var measures = parseMultiline(data.successMeasures);
-    if (!problem && !solutionText && !measures.length) return "";
-
-    var html = '<section class="card exec-summary">';
-    html += '<h2 class="card-title">Executive Summary</h2>';
-    html += '<div class="exec-grid">';
-    if (problem) {
-      html += '<div class="exec-col"><span class="exec-label">The Problem</span><p>' + escapeHtml(problem) + "</p></div>";
-    }
-    if (solutionText) {
-      html += '<div class="exec-col"><span class="exec-label">Our Recommendation</span><p>' + escapeHtml(solutionText) + "</p></div>";
-    }
-    if (measures.length) {
-      html += '<div class="exec-col"><span class="exec-label">Expected Impact</span><p>' + escapeHtml(measures.join(" · ")) + "</p></div>";
-    }
-    html += "</div></section>";
-    return html;
-  }
-
   function renderOverview(data) {
     if (!data.clientName && !data.teamName && !data.teamNumber && !data.objective) return "";
     var html = '<section class="card">';
@@ -1486,78 +1331,6 @@
   // ---------- body section builders ----------
   // Each returns null (nothing to show) or {title, headline?, body}. buildPreviewHTML
   // decides numbering, the Agenda, and slide chrome from whichever of these are non-null.
-
-  function renderBusinessProblem(data) {
-    var challenges = parseMultiline(data.keyChallenges);
-    var metrics = parseMultiline(data.baselineMetrics);
-    if (!data.problemSummary && !challenges.length && !metrics.length) return null;
-
-    var parsedSummary = data.problemSummary ? parseLabel(data.problemSummary) : null;
-    var body = "";
-    if (data.problemSummary) {
-      body += '<p class="card-lead">' + labelBadge(parsedSummary.label) + escapeHtml(parsedSummary.text) + "</p>";
-    }
-    if (challenges.length || metrics.length) {
-      body += '<div class="split-grid">';
-      if (challenges.length) {
-        body += '<div><h3 class="sub-title">Key Challenges</h3>' + renderList(challenges) + "</div>";
-      }
-      if (metrics.length) {
-        body += '<div><h3 class="sub-title">Baseline Metrics</h3>' + renderList(metrics) + "</div>";
-      }
-      body += "</div>";
-    }
-    return {
-      title: "Business Problem",
-      headline: parsedSummary ? firstSentence(parsedSummary.text, 140) : "",
-      owner: ownerName(data, "businessWorkflow"),
-      body: body
-    };
-  }
-
-  function renderSolution(data) {
-    if (!data.solutionName && !data.solutionDescription) return null;
-    var parsedDesc = data.solutionDescription ? parseLabel(data.solutionDescription) : null;
-    var body = "";
-    if (data.solutionName) {
-      body += '<h3 class="solution-name">' + escapeHtml(data.solutionName) + "</h3>";
-    }
-    if (data.solutionDescription) {
-      body += '<p class="card-lead">' + labelBadge(parsedDesc.label) + escapeHtml(parsedDesc.text) + "</p>";
-    }
-    return {
-      title: "Proposed AI Solution",
-      headline: parsedDesc ? firstSentence(parsedDesc.text, 140) : "",
-      owner: ownerName(data, "aiSolution"),
-      body: body
-    };
-  }
-
-  function renderWorkflowDiagram(steps) {
-    var html = '<div class="workflow">';
-    steps.forEach(function (step, i) {
-      if (i > 0) html += '<span class="workflow-arrow">&#8594;</span>';
-      html += '<div class="workflow-step">' + escapeHtml(step) + "</div>";
-    });
-    html += "</div>";
-    return html;
-  }
-
-  function renderWorkflow(data) {
-    var current = parseWorkflow(data.currentWorkflow);
-    var proposed = parseWorkflow(data.workflow);
-    if (!current.length && !proposed.length) return null;
-    var body;
-    if (current.length && proposed.length) {
-      body = '<h3 class="sub-title">Current Process</h3>' + renderWorkflowDiagram(current)
-        + '<h3 class="sub-title">Proposed Process</h3>' + renderWorkflowDiagram(proposed);
-    } else if (proposed.length) {
-      body = renderWorkflowDiagram(proposed);
-    } else {
-      body = '<h3 class="sub-title">Current Process</h3>' + renderWorkflowDiagram(current);
-    }
-    return { title: "Workflow", owner: ownerName(data, "businessWorkflow"), body: body };
-  }
 
   // Common time units, normalized to minutes, so "14 hours" vs "20 minutes"
   // compares fairly instead of comparing the raw numbers 14 vs 20.
@@ -1626,145 +1399,40 @@
     return html;
   }
 
-  function collectPrompts(data) {
-    var prompts = [];
-    for (var i = 1; i <= 5; i++) {
-      var purpose = data["prompt" + i + "Purpose"] || "";
-      var text = data["prompt" + i + "Text"] || "";
-      if (!purpose && !text) continue;
-      prompts.push({ n: i, purpose: purpose, text: text });
-    }
-    return prompts;
-  }
-
-  function renderPrototype(data) {
-    var prompts = collectPrompts(data);
-    var beforeAfter = parseMultiline(data.beforeAfter);
-    if (!prompts.length && !beforeAfter.length) return null;
-    var body = prompts.map(function (p) {
-      var heading = "Component " + p.n + (p.purpose ? " — " + p.purpose : "");
-      var block = '<h3 class="sub-title">' + escapeHtml(heading) + "</h3>";
-      if (p.text) block += '<pre class="prototype-block">' + escapeHtml(p.text) + "</pre>";
-      return block;
-    }).join("");
-    if (beforeAfter.length) {
-      body += '<h3 class="sub-title">Before / After</h3>';
-      var chart = renderBeforeAfterChart(beforeAfter);
-      body += chart || renderList(beforeAfter);
-    }
-    return { title: "Solution Details", owner: ownerName(data, "aiSolution"), body: body };
-  }
-
-  function renderSampleProposal(data) {
-    if (!data.sampleProposal) return null;
-    return { title: "Recommendation", owner: ownerName(data, "proposal"), body: '<pre class="prototype-block">' + escapeHtml(data.sampleProposal) + "</pre>" };
-  }
-
-  function renderFollowUpSequence(data) {
-    var messages = [data.followUpMessage1, data.followUpMessage2, data.followUpMessage3]
-      .map(function (m, i) { return m ? { n: i + 1, text: m } : null; })
-      .filter(Boolean);
-    if (!messages.length) return null;
-    var body = messages.map(function (m) {
-      return '<h3 class="sub-title">Message ' + m.n + '</h3><pre class="prototype-block">' + escapeHtml(m.text) + "</pre>";
-    }).join("");
-    return { title: "Follow-Up Sequence", owner: ownerName(data, "proposal"), body: body };
-  }
-
-  function renderProposalQualityReview(data) {
-    if (!data.proposalQualityReview) return null;
-    var parsed = parseLabel(data.proposalQualityReview);
-    return {
-      title: "Proposal Quality Review",
-      owner: ownerName(data, "proposal"),
-      body: '<p class="card-lead">' + labelBadge(parsed.label) + escapeHtml(parsed.text) + "</p>"
-    };
-  }
-
-  function renderTestingNotes(data) {
-    var criteria = parseMultiline(data.testingCriteria);
-    var hasNotes = !!data.testingNotes;
-    if (!criteria.length && !hasNotes) return null;
+  // Renders one of the 5 deliverable-owning steps generically: each filled
+  // item field becomes its own labeled sub-section, using that item's real
+  // label for the currently-selected project (see applyDeliverableLabels).
+  // A multi-line field (e.g. a KPI list, or "Before:"/"After:" pairs) renders
+  // as a list or bar chart instead of one paragraph — the same parseMultiline/
+  // renderBeforeAfterChart logic used everywhere else in the deck, so a team
+  // gets a chart automatically just by using that format in any item field.
+  function renderDeliverable(data, index, roleSlug) {
+    var deliverables = deliverablesForProject(data.presetProjectSelect);
+    var d = deliverables[index - 1];
+    var maxSlots = DELIVERABLE_FIELD_COUNTS[index - 1];
     var body = "";
-    if (criteria.length) {
-      body += '<h3 class="sub-title">Testing Criteria</h3><ul class="risk-list">' + criteria.map(function (line) {
-        var parsed = parseLabel(line);
-        return "<li>" + labelBadge(parsed.label) + escapeHtml(parsed.text) + "</li>";
-      }).join("") + "</ul>";
+    var headlineText = "";
+    for (var j = 1; j <= maxSlots; j++) {
+      var val = data["d" + index + "f" + j];
+      if (!val) continue;
+      var label = d.fields[j - 1] || ("Item " + j);
+      var lines = parseMultiline(val);
+      var rendered;
+      if (lines.length > 1) {
+        rendered = renderBeforeAfterChart(lines) || renderList(lines);
+        if (!headlineText) headlineText = parseLabel(lines[0]).text;
+      } else {
+        var parsed = parseLabel(val);
+        if (!headlineText) headlineText = parsed.text;
+        rendered = '<p class="card-lead">' + labelBadge(parsed.label) + escapeHtml(parsed.text) + "</p>";
+      }
+      body += '<h3 class="sub-title">' + escapeHtml(label) + "</h3>" + rendered;
     }
-    if (hasNotes) {
-      var parsedNotes = parseLabel(data.testingNotes);
-      body += (criteria.length ? '<h3 class="sub-title">Results & Revisions</h3>' : "") +
-        '<p class="card-lead">' + labelBadge(parsedNotes.label) + escapeHtml(parsedNotes.text) + "</p>";
-    }
-    return { title: "Testing & Results", owner: ownerName(data, "testing"), body: body };
-  }
-
-  function renderHumanReview(data) {
-    if (!data.humanReview) return null;
-    var parsed = parseLabel(data.humanReview);
+    if (!body) return null;
     return {
-      title: "Human Review & Handoff",
-      owner: ownerName(data, "proposal"),
-      body: '<p class="card-lead">' + labelBadge(parsed.label) + escapeHtml(parsed.text) + "</p>"
-    };
-  }
-
-  function renderMeasures(data) {
-    var measures = parseMultiline(data.successMeasures);
-    if (!measures.length) return null;
-    var body = '<div class="measures-grid">';
-    measures.forEach(function (m, i) {
-      body += '<div class="measure-card"><span class="measure-num">' + pad(i + 1) + '</span><span class="measure-text">' + escapeHtml(m) + "</span></div>";
-    });
-    body += "</div>";
-    return { title: "Success Measures", owner: ownerName(data, "testing"), body: body };
-  }
-
-  function renderResponsibleAI(data) {
-    var risks = parseMultiline(data.risksSafeguards);
-    if (!risks.length) return null;
-    var body = '<ul class="risk-list">' + risks.map(function (line) {
-      var parsed = parseLabel(line);
-      return "<li>" + labelBadge(parsed.label) + escapeHtml(parsed.text) + "</li>";
-    }).join("") + "</ul>";
-    return { title: "Risks & Safeguards", owner: ownerName(data, "proposal"), body: body };
-  }
-
-  // The phased implementation plan, walked through one deliverable at a time
-  // (pilot, then training, handoff, adoption risk, and feedback as
-  // pilot-support detail, then measure/improve and the scale decision), plus
-  // a closing one-line team
-  // recommendation. Any subset can be filled in alone — a team that only
-  // fills in Final Recommendation still gets a working slide.
-  function renderNextSteps(data) {
-    var items = [
-      { label: "Days 1-30 — Pilot", text: data.implementPilot },
-      { label: "Training Requirements", text: data.implementTraining },
-      { label: "Human Handoff Points", text: data.implementHandoff },
-      { label: "Adoption Risks", text: data.implementAdoptionRisks },
-      { label: "Feedback Process", text: data.implementFeedback },
-      { label: "Days 31-60 — Measure & Improve", text: data.implementImprove },
-      { label: "Days 61-90 — Scale Decision", text: data.implementScale }
-    ].filter(function (p) { return p.text; });
-    var steps = parseMultiline(data.nextSteps);
-    if (!items.length && !steps.length) return null;
-
-    var body = items.map(function (p) {
-      return '<h3 class="sub-title">' + escapeHtml(p.label) + '</h3><p class="card-lead">' + escapeHtml(p.text) + "</p>";
-    }).join("");
-    if (steps.length) {
-      body += (items.length ? '<h3 class="sub-title">Final Recommendation</h3>' : "") +
-        '<ol class="next-steps">' + steps.map(function (line) {
-          var parsed = parseLabel(line);
-          return "<li>" + labelBadge(parsed.label) + escapeHtml(parsed.text) + "</li>";
-        }).join("") + "</ol>";
-    }
-    var headlineSource = items.length ? items[0].text : parseLabel(steps[0]).text;
-    return {
-      title: "Implementation Plan",
-      headline: "Recommended first step: " + firstSentence(headlineSource, 100),
-      owner: ownerName(data, "implementation"),
+      title: d.title,
+      headline: headlineText ? firstSentence(headlineText, 140) : "",
+      owner: ownerName(data, roleSlug),
       body: body
     };
   }
@@ -1810,35 +1478,26 @@
     // Every body section is computed once, so the Agenda and the numbered
     // slides that follow always agree on titles and numbering — no separate
     // "does this have content" checks to keep in sync. Order follows the
-    // deck's fixed flow: business problem and workflow, then AI solution and
-    // prototype, then sales content and Responsible AI, then testing and
-    // measures, then the implementation plan — each step owner's own
-    // uploaded slides sit right after their own content, not lumped at the
-    // end.
+    // deck's fixed flow: the 5 deliverables in step order, each step owner's
+    // own uploaded slides sitting right after their own content, not lumped
+    // at the end.
     var sections = [
-      renderBusinessProblem(data),
-      renderWorkflow(data),
+      renderDeliverable(data, 1, "businessWorkflow"),
       renderPersonSlideGallery(data, "businessWorkflow"),
-      renderSolution(data),
-      renderPrototype(data),
+      renderDeliverable(data, 2, "aiSolution"),
       renderPersonSlideGallery(data, "aiSolution"),
-      renderSampleProposal(data),
-      renderFollowUpSequence(data),
-      renderProposalQualityReview(data),
-      renderResponsibleAI(data),
-      renderHumanReview(data),
+      renderDeliverable(data, 3, "proposal"),
       renderPersonSlideGallery(data, "proposal"),
-      renderTestingNotes(data),
-      renderMeasures(data),
+      renderDeliverable(data, 4, "testing"),
       renderPersonSlideGallery(data, "testing"),
-      renderNextSteps(data),
+      renderDeliverable(data, 5, "implementation"),
       renderPersonSlideGallery(data, "implementation"),
       renderTeam(data)
     ].filter(Boolean);
 
     var confidentialTag = "Confidential — " + (data.clientName || data.teamName || "Draft");
     var agenda = renderAgenda(sections.map(function (s, i) { return { num: pad(i + 1), title: s.title }; }));
-    var front = renderHero(data) + agenda + renderExecutiveSummary(data) + renderOverview(data);
+    var front = renderHero(data) + agenda + renderOverview(data);
     var body = sections.map(function (s, i) { return wrapSlide(pad(i + 1), s, confidentialTag); }).join("");
     return '<article class="preview-page">' + front + body + renderFooter() + "</article>";
   }
@@ -2036,6 +1695,7 @@
           return;
         }
         applyFormData(clean);
+        applyDeliverableLabels(clean.presetProjectSelect || "");
         currentLogoDataUrl = clean.logoDataUrl || "";
         updateLogoPreview();
         setBriefRawText(clean.briefRawText || "");
@@ -2069,6 +1729,7 @@
     });
     document.getElementById("uploadSummary").hidden = true;
     document.getElementById("presetProjectSelect").value = "";
+    applyDeliverableLabels("");
     renderPreview();
     showStep(0);
   }
@@ -2132,6 +1793,7 @@
     if (!draft) return false;
     if (!window.confirm("Restore your saved progress from this browser?")) return false;
     applyFormData(draft);
+    applyDeliverableLabels(draft.presetProjectSelect || "");
     currentLogoDataUrl = draft.logoDataUrl || "";
     updateLogoPreview();
     setBriefRawText(draft.briefRawText || "");
@@ -2150,7 +1812,7 @@
       window.alert("Fill in some project information before exporting.");
       return;
     }
-    var title = data.solutionName || data.teamName || "Project Preview";
+    var title = data.clientName || data.teamName || "Project Preview";
     var body = buildPreviewHTML(data);
     var doc = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n" +
       "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
@@ -2326,10 +1988,19 @@
       presetSelect.appendChild(opt);
     });
     presetSelect.addEventListener("change", function () {
-      if (!this.value) return;
+      applyDeliverableLabels(this.value);
+      if (!this.value) { renderPreview(); return; }
       var preset = PRESET_PROJECTS[this.value];
+      // Clear every deliverable field first — switching projects shouldn't
+      // leave a previously-selected project's pre-filled text sitting in a
+      // field the new one doesn't happen to set.
+      ["clientName", "objective"].concat(DELIVERABLE_FIELD_IDS).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.value = "";
+      });
       finishUpload(preset.extracted, preset.rawText);
     });
+    applyDeliverableLabels("");
     document.getElementById("btnToggleBriefReference").addEventListener("click", function () {
       var text = document.getElementById("briefReferenceText");
       text.hidden = !text.hidden;
